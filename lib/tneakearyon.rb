@@ -1,5 +1,5 @@
-require "tneakearyon/version"
+require 'tneakearyon/version'
+require 'tneakearyon/bank'
 
 module Tneakearyon
-  # Your code goes here...
 end
