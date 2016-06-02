@@ -1,8 +1,9 @@
 # Tneakearyon
+Tneakearyon (ធនាគារយន្ត pronounced tneak-ear-yon, literally translates to Bank Machine in Khmer) is a Ruby library for programmatically interacting with Internet Banking.
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/tneakearyon`. To experiment with that code, run `bin/console` for an interactive prompt.
+## Supported Banks
 
-TODO: Delete this and the text above, and describe your gem
+* [Maybank Cambodia](https://www.maybank2u.com.kh/)
 
 ## Installation
 
@@ -22,7 +23,12 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+maybank = Tneakearyon::Bank::MaybankCambodia::WebApi.new(:username => "username", :password => "password")
+maybank.fetch_account_details!
+maybank.account_details
+# => {:login_name=>"JOE BLOGGS", :accounts=>{"000180212345678"=>{:number=>"000180212345678", :current_balance=>#<Money fractional:324637 currency:USD>, :available_balance=>#<Money fractional:324637 currency:USD>}}}
+```
 
 ## Development
 
@@ -32,8 +38,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/tneakearyon.
-
+Bug reports and pull requests are welcome on GitHub at https://github.com/dwilkie/tneakearyon.
 
 ## License
 
