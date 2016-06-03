@@ -47,8 +47,8 @@ class Tneakearyon::Bank::MaybankCambodia::WebClient
   end
 
   def transfer!(options = {})
-    login! if !logged_in?
     raise(ArgumentError, "You must pass from_account, :to_account and :amount") if !options.has_key?(:from_account) || !options.has_key?(:to_account) || !options.has_key?(:amount)
+    login! if !logged_in?
     get_third_party_transfer_details!
     post_third_party_transfer_confirm!(options)
   end
