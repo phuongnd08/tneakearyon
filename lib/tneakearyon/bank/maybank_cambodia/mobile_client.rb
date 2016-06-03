@@ -1,9 +1,10 @@
-class Tneakearyon::Bank::MaybankCambodia::JsonApi
+class Tneakearyon::Bank::MaybankCambodia::MobileClient
   DEFAULT_HOST = "https://m2umobile.maybank2u.com.kh"
 
   attr_accessor :host, :cookie
 
   def initialize
+    raise(ArgumentError, "Not Implemented")
     self.host = DEFAULT_HOST
   end
 

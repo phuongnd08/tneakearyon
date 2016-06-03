@@ -1,9 +1,10 @@
 require 'nokogiri'
 require 'byebug' # REMOVE ME
 require 'rack/utils'
+require 'httparty'
 
-class Tneakearyon::Bank::MaybankCambodia::WebApi < Tneakearyon::Bank::MaybankCambodia::Api
-  API_BASE_ENDPOINT                 = 'https://www.maybank2u.com.kh'
+class Tneakearyon::Bank::MaybankCambodia::WebClient
+  API_BASE_ENDPOINT                      = 'https://www.maybank2u.com.kh'
 
   API_PORTAL_ACCESS_PATH                 = '/RIB/ib101/ibPortalAccess.do'
   API_LOGIN_PATH                         = '/RIB/ib101/ibLogin.do'
@@ -14,7 +15,7 @@ class Tneakearyon::Bank::MaybankCambodia::WebApi < Tneakearyon::Bank::MaybankCam
   API_THIRD_PARTY_TRANSFER_CONFIRM_PATH  = '/RIB/ib104/ib3rdPartyTransferConfirm.do'
 
   PAGE_ELEMENTS = {
-    :form_token_input_name             => "org.apache.struts.taglib.html.TOKEN",
+    :form_token_input_name              => "org.apache.struts.taglib.html.TOKEN",
     :login_name                         => "logdetailsbold",
     :account_number_query_string_param  => "acctNo",
     :secondary_token_query_string_param => "SECONDARY_TOKEN"
@@ -22,18 +23,27 @@ class Tneakearyon::Bank::MaybankCambodia::WebApi < Tneakearyon::Bank::MaybankCam
 
   WHITELISTED_COOKIE_NAMES = ["M2UMCI"]
 
-  attr_accessor :username, :password, :account_details,
-                :cookies, :form_token, :encryption_key, :html_response, :secondary_token
+  attr_accessor :username, :password, :login_details, :bank_accounts,
+                :cookies, :html_response, :form_token, :encryption_key, :secondary_token
 
   def initialize(params = {})
     self.username = params[:username]
     self.password = params[:password]
   end
 
-  def fetch_account_details!
+  def inspect
+    "#{self.to_s} @login_details=#{login_details.inspect}"
+  end
+
+  def fetch_login_details!
+    login! if !logged_in?
+    login_details
+  end
+
+  def fetch_bank_accounts!
     login! if !logged_in?
     fetch_account_summary!
-    account_details
+    bank_accounts
   end
 
   def transfer!(options = {})
@@ -53,11 +63,24 @@ class Tneakearyon::Bank::MaybankCambodia::WebApi < Tneakearyon::Bank::MaybankCam
     !!login_name
   end
 
+  def login_name
+    (login_details || {})[:name]
+  end
+
   def login!
     setup_session!
     post_username!
     post_password!
-    set_login_details
+    self.login_details ||= {}
+    self.login_details[:name] = extract_login_name!
+  end
+
+  def extract_login_name!
+    if page_element = html_response.at_xpath("//*[contains(@class, '#{page_element(:login_name)}')]")
+      page_element.text
+    else
+      raise(RuntimeError, "Unable to login. Check credentials")
+    end
   end
 
   def get_third_party_transfer_details!
@@ -141,7 +164,7 @@ class Tneakearyon::Bank::MaybankCambodia::WebApi < Tneakearyon::Bank::MaybankCam
   end
 
   def fetch_account_summary!
-    accounts = self.account_details[:accounts] ||= {}
+    self.bank_accounts = []
     account_summary_path = html_response.at_xpath("//a[contains(@href, '#{API_ACCOUNT_SUMMARY_PATH}')]")["href"]
 
     set_html_response(
@@ -153,25 +176,14 @@ class Tneakearyon::Bank::MaybankCambodia::WebApi < Tneakearyon::Bank::MaybankCam
     html_response.at_xpath(account_info_link_xpath).ancestors("tbody").first.search("tr").each do |row|
       account_number = parse_url_query_string(row.at_xpath(account_info_link_xpath)["href"])[page_element(:account_number_query_string_param)]
       columns = row.search("td")
-      accounts[account_number] = {
+      self.bank_accounts << {
         :number => account_number,
         :current_balance => Monetize.parse(columns[1].text),
         :available_balance => Monetize.parse(columns[2].text)
       }
     end
-  end
 
-  def login_name
-    (account_details || {})[:login_name]
-  end
-
-  def set_login_details
-    if page_element = html_response.at_xpath("//*[contains(@class, '#{page_element(:login_name)}')]")
-      self.account_details ||= {}
-      self.account_details[:login_name] = page_element.text
-    else
-      raise(RuntimeError, "Unable to login. Check credentials")
-    end
+    bank_accounts
   end
 
   def set_login_request_body(params = {})
@@ -257,7 +269,7 @@ class Tneakearyon::Bank::MaybankCambodia::WebApi < Tneakearyon::Bank::MaybankCam
   end
 end
 
-# maybank = Tneakearyon::Bank::MaybankCambodia::WebApi.new(:username => "username", :password => "password")
+# maybank = Tneakearyon::Bank::MaybankCambodia::WebClient.new(:username => "username", :password => "password")
 # maybank.fetch_account_details!
 # response = maybank.transfer!(:from_account => "fromAccount", :to_account => "toAccount", :amount => Money.new(10000, "USD"), :email => "someone@gmail.com")
 # File.open("login_output.html", 'w') { |file| file.write(maybank.html_response.to_s) }

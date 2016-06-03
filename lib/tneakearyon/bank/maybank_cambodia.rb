@@ -3,5 +3,5 @@ module Tneakearyon::Bank
   end
 end
 
-require_relative "maybank_cambodia/api"
-require_relative "maybank_cambodia/web_api"
+require_relative "maybank_cambodia/web_client"
+require_relative "maybank_cambodia/internet_banking"

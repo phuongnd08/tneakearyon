@@ -1,0 +1,2 @@
+class Tneakearyon::Transfer
+end
