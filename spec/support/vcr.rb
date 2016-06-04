@@ -18,8 +18,9 @@ VCR.configure do |c|
     set_cookie && set_cookie.first
   end
 
-  c.filter_sensitive_data("JOE BLOGGS") do |interaction|
-    (/logdetailsbold.+\>(.+?)\</.match(interaction.response.body) || [])[1]
+  ENV.select { |key, value| key =~ /^TNEAKEARYON_TEST_FILTERED_DATA/ }.each do |key, value|
+    c.filter_sensitive_data("<FILTERED>") do |interaction|
+      value
+    end
   end
 end
-

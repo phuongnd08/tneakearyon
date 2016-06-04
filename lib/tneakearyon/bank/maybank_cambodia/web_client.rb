@@ -1,5 +1,4 @@
 require 'nokogiri'
-require 'byebug' # REMOVE ME
 require 'rack/utils'
 require 'httparty'
 
@@ -27,8 +26,8 @@ class Tneakearyon::Bank::MaybankCambodia::WebClient
                 :cookies, :html_response, :form_token, :encryption_key, :secondary_token
 
   def initialize(params = {})
-    self.username = params[:username]
-    self.password = params[:password]
+    self.username = params[:username] || ENV["TNEAKEARYON_BANK_MAYBANK_CAMBODIA_WEB_CLIENT_USERNAME"]
+    self.password = params[:password] || ENV["TNEAKEARYON_BANK_MAYBANK_CAMBODIA_WEB_CLIENT_PASSWORD"]
   end
 
   def inspect

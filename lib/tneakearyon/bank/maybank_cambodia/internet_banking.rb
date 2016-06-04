@@ -1,10 +1,8 @@
 class Tneakearyon::Bank::MaybankCambodia::InternetBanking
-  attr_accessor :username, :password, :client, :bank_accounts, :login_details
+  attr_accessor :client, :bank_accounts, :login_details
 
   def initialize(options = {})
-    self.username = options[:username]
-    self.password = options[:password]
-    self.client = options[:client]
+    self.client = options[:client] || Tneakearyon::Bank::MaybankCambodia::WebClient.new(options)
   end
 
   def login_details
@@ -18,10 +16,6 @@ class Tneakearyon::Bank::MaybankCambodia::InternetBanking
   def create_transfer!(options = {})
     transfer_response = client.transfer!(options)
     Tneakearyon::Transfer.new(:amount => transfer_response[:amount])
-  end
-
-  def client
-    @client ||= Tneakearyon::Bank::MaybankCambodia::WebClient.new(:username => username, :password => password)
   end
 
   private

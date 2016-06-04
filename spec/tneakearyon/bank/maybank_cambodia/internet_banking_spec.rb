@@ -1,26 +1,29 @@
 require 'spec_helper'
 
 describe Tneakearyon::Bank::MaybankCambodia::InternetBanking do
-  let(:username) { "username" }
-  let(:password) { "password" }
-
-  subject { described_class.new(:username => username, :password => password) }
+  subject { described_class.new }
 
   describe "#login_details" do
+    let(:result) { subject.login_details }
+
+    def fetch_login_details!(options = {})
+      VCR.use_cassette(options[:cassette]) do
+        result
+      end
+    end
+
     context "given the correct credentials" do
-      let(:result) { subject.login_details }
-
-      def fetch_login_details!
-        VCR.use_cassette(:"maybank_cambodia/web_client/fetch_login_details") do
-          result
-        end
-      end
-
+      # assumes correct credentials are set in .env
       before do
-        fetch_login_details!
+        fetch_login_details!(:cassette => "maybank_cambodia/web_client/fetch_login_details")
       end
 
-      it { expect(result.name).to eq("JOE BLOGGS") }
+      it { expect(result.name).not_to eq(nil) }
+    end
+
+    context "given incorrect credentials" do
+      subject { described_class.new(:username => "wrong", :password => "wrong") }
+      it { expect { fetch_login_details!(:cassette => "maybank_cambodia/web_client/incorrect_credentials") }.to raise_error(RuntimeError) }
     end
   end
 end
