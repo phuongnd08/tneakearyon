@@ -50,7 +50,7 @@ describe Tneakearyon::Bank::MaybankCambodia::InternetBanking do
     let(:options) { { :to_account => to_account, :amount => amount, :email => email } }
     let(:result) { subject.create_third_party_transfer!(options) }
 
-    context "if the :to_account number is incorrect" do
+    context "the :to_account is incorrect" do
       let(:to_account) { "wrong" }
 
       before do

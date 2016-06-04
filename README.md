@@ -1,4 +1,7 @@
 # Tneakearyon
+
+[![Build Status](https://travis-ci.org/dwilkie/tneakearyon.svg?branch=master)](https://travis-ci.org/dwilkie/tneakearyon)
+
 Tneakearyon (ធនាគារយន្ត pronounced tneak-ear-yon, literally translates to Bank Machine in Khmer) is a Ruby library for programmatically interacting with Internet Banking.
 
 ## Supported Banks
@@ -70,12 +73,15 @@ bank_accounts = ib.bank_accounts
 ### Transfers
 
 ```ruby
-transfer = ib.create_transfer!(:from_account => "0001234556677", :to_account => "0001234556678", :amount => Money.new(10000, "USD"))
+transfer = ib.create_third_party_transfer!(:to_account => "0001234556678", :amount => Money.new(1, "USD"))
+# => #<Tneakearyon::Transfer:0x00563738af0af8 @error_message="The 3rd party account number is invalid.">
 ```
 
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+
+If you are recording new VCR interactions be sure to filter out your sensitive data before committing the cassette. Configure sensitive data in `.env.test`.
 
 To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
 
