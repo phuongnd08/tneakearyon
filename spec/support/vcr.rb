@@ -18,8 +18,11 @@ VCR.configure do |c|
     set_cookie && set_cookie.first
   end
 
-  ENV.select { |key, value| key =~ /^TNEAKEARYON_TEST_FILTERED_DATA/ }.each do |key, value|
-    c.filter_sensitive_data("<FILTERED>") do |interaction|
+  filtered_data_regexp = /^TNEAKEARYON_TEST_FILTERED_DATA_/
+
+  ENV.select { |key, value| key =~ filtered_data_regexp }.each do |key, value|
+    filter_name = key.sub(filtered_data_regexp, "")
+    c.filter_sensitive_data("<FILTERED_#{filter_name}>") do |interaction|
       value
     end
   end

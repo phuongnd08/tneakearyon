@@ -6,13 +6,7 @@ http_interactions:
     body:
       encoding: US-ASCII
       string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Ruby
+    headers: {}
   response:
     status:
       code: 200
@@ -31,7 +25,7 @@ http_interactions:
       X-Powered-By:
       - Servlet/2.5 JSP/2.1
       Date:
-      - Sat, 04 Jun 2016 03:51:06 GMT
+      - Sat, 04 Jun 2016 03:56:25 GMT
       Transfer-Encoding:
       - chunked
       Connection:
@@ -86,9 +80,9 @@ http_interactions:
         cHQ+CjxzY3JpcHQgbGFuZ3VhZ2U9IkphdmFTY3JpcHQiIHR5cGU9InRleHQv
         amF2YXNjcmlwdCIgc3JjPSIvcmVzb3VyY2VzL215L2pzL2NvbW1vbi9jcnlw
         dGlvbjIuanMiPjwvc2NyaXB0PgogICAgICAgICAgICAgICAKPHNjcmlwdCB0
-        eXBlPSJ0ZXh0L2phdmFzY3JpcHQiPgpzZXRWYWx1ZSgieURIMFhTUUt2ZzJZ
-        djBsUXhZR3hRZm43MHE4eTR4bnN6SktLdGxCOTRqSk1LUDFTaG1GeSEtMTI1
-        OTk4OTc2MyExNDY1MDEyMjY2MTU4Iik7ICAgICAgICAgICAgCjwvc2NyaXB0
+        eXBlPSJ0ZXh0L2phdmFzY3JpcHQiPgpzZXRWYWx1ZSgiTFoxR1hTUkp5dGtO
+        M0hrMDh2SnBTYjg4OUtiTWgxQkxMNlgwcTd2aDV6R0xMSlNuWGNHRyEtMTI1
+        OTk4OTc2MyExNDY1MDEyNTg1MjE1Iik7ICAgICAgICAgICAgCjwvc2NyaXB0
         PiAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAKCjxzY3JpcHQgbGFu
         Z3VhZ2U9SmF2YVNjcmlwdD4KPCEtLQoKLy9EaXNhYmxlIHJpZ2h0IGNsaWNr
         IHNjcmlwdCBJSUktIEJ5IFJlbmlnYWRlIChyZW5pZ2FkZUBtZWRpYW9uZS5u
@@ -5198,12 +5192,12 @@ http_interactions:
         bmFtZTFFcnJvciIgY2xhc3M9ImVycm9yIj48L3NwYW4+DQoNCgkJCQkJCQk8
         L3RkPg0KDQoJCQkJCQk8L3RyPg0KDQoJCQkJCTwvdGFibGU+DQoNCg0KDQoJ
         CQkJCTxmb3JtIG5hbWU9ImliTG9naW5Gb3JtIiBtZXRob2Q9InBvc3QiIGFj
-        dGlvbj0iL1JJQi9pYjEwMS9pYkxvZ2luLmRvO00yVU1DST15REgwWFNRS3Zn
-        Mll2MGxReFlHeFFmbjcwcTh5NHhuc3pKS0t0bEI5NGpKTUtQMVNobUZ5IS0x
+        dGlvbj0iL1JJQi9pYjEwMS9pYkxvZ2luLmRvO00yVU1DST1MWjFHWFNSSnl0
+        a04zSGswOHZKcFNiODg5S2JNaDFCTEw2WDBxN3ZoNXpHTExKU25YY0dHIS0x
         MjU5OTg5NzYzIiBvbnN1Ym1pdD0icmV0dXJuIHZhbGlkYXRlSWJMb2dpbkZv
         cm0yKHRoaXMpOyI+PGlucHV0IHR5cGU9ImhpZGRlbiIgbmFtZT0ib3JnLmFw
-        YWNoZS5zdHJ1dHMudGFnbGliLmh0bWwuVE9LRU4iIHZhbHVlPSJlYzZhNWUx
-        NTU2ZTY4NDJjNDQxNTNhMTg5ZDFjMTBiNCI+DQoNCgkJCQkJCTx0YWJsZSB3
+        YWNoZS5zdHJ1dHMudGFnbGliLmh0bWwuVE9LRU4iIHZhbHVlPSIxNjc3MjYz
+        ZGYwOWUxNzkwNjZhN2QwOTFjMThlZjE2MSI+DQoNCgkJCQkJCTx0YWJsZSB3
         aWR0aD0iMTAwJSIgYm9yZGVyPSIwIiBjZWxsc3BhY2luZz0iMCIgY2VsbHBh
         ZGRpbmc9IjAiPg0KDQoJCQkJCQkJPHRyIGNsYXNzPSJ0ck5vQm9yZGVyIj4N
         Cg0KCQkJCQkJCQk8dGQgd2lkdGg9IjI1JSI+PHNwYW4gaWQ9InVzZXJuYW1l
@@ -5234,12 +5228,12 @@ http_interactions:
         bnQuZm9ybVswXS51c2VyTmFtZS5mb2N1cygpOw0KDQoJCQkJCS8vLS0+DQoN
         CgkJCQkJPC9zY3JpcHQ+DQoNCgkJCQkJPHVsIGNsYXNzPSJjbGVhcmZpeCBs
         b2dpbnN1YmJ0Ij4NCg0KCQkJCQkJPGxpPjxhIGhyZWY9Ii9SSUIvaWIxMDEv
-        aWJSZXNldEluZm8uZG87TTJVTUNJPXlESDBYU1FLdmcyWXYwbFF4WUd4UWZu
-        NzBxOHk0eG5zekpLS3RsQjk0akpNS1AxU2htRnkhLTEyNTk5ODk3NjMiPlNl
+        aWJSZXNldEluZm8uZG87TTJVTUNJPUxaMUdYU1JKeXRrTjNIazA4dkpwU2I4
+        ODlLYk1oMUJMTDZYMHE3dmg1ekdMTEpTblhjR0chLTEyNTk5ODk3NjMiPlNl
         bGYtUmVzZXQgUGFzc3dvcmQ8L2E+PC9saT4NCg0KCQkJCQkJPGxpPjxhIGhy
         ZWY9Ii9SSUIvaWIxMDEvaWJGaXJzdFRpbWVMb2dpblRlcm1zLmRvO00yVU1D
-        ST15REgwWFNRS3ZnMll2MGxReFlHeFFmbjcwcTh5NHhuc3pKS0t0bEI5NGpK
-        TUtQMVNobUZ5IS0xMjU5OTg5NzYzIj5GaXJzdCBUaW1lIExvZ2luPC9hPjwv
+        ST1MWjFHWFNSSnl0a04zSGswOHZKcFNiODg5S2JNaDFCTEw2WDBxN3ZoNXpH
+        TExKU25YY0dHIS0xMjU5OTg5NzYzIj5GaXJzdCBUaW1lIExvZ2luPC9hPjwv
         bGk+DQoNCgkJCQkJPC91bD4NCg0KCQkJCQk8ZGl2IGNsYXNzPSJsb2dpbkhp
         Z2hsaWdodCI+DQoNCgkJCQkJCTxzdHJvbmc+SGF2ZSB5b3UgZm9yZ290dGVu
         IHlvdXIgcGFzc3dvcmQ/PC9zdHJvbmc+IFlvdSBjYW4gcmVzZXQgeW91ciBw
@@ -5372,7 +5366,7 @@ http_interactions:
         CQkJPGRpdiBjbGFzcz0ibHMtcm93LWNsciI+PC9kaXY+CgkJCTwvZGl2PgoJ
         CTwvZGl2PgoJPC9kaXY+CjwvYm9keT4KPC9odG1sPgo=
     http_version: 
-  recorded_at: Sat, 04 Jun 2016 03:51:08 GMT
+  recorded_at: Sat, 04 Jun 2016 03:56:27 GMT
 - request:
     method: post
     uri: https://www.maybank2u.com.kh/RIB/ib101/ibLogin.do
@@ -5400,7 +5394,7 @@ http_interactions:
       X-Powered-By:
       - Servlet/2.5 JSP/2.1
       Date:
-      - Sat, 04 Jun 2016 03:51:09 GMT
+      - Sat, 04 Jun 2016 03:56:28 GMT
       Transfer-Encoding:
       - chunked
       Connection:
@@ -5455,9 +5449,9 @@ http_interactions:
         cHQ+CjxzY3JpcHQgbGFuZ3VhZ2U9IkphdmFTY3JpcHQiIHR5cGU9InRleHQv
         amF2YXNjcmlwdCIgc3JjPSIvcmVzb3VyY2VzL215L2pzL2NvbW1vbi9jcnlw
         dGlvbjIuanMiPjwvc2NyaXB0PgogICAgICAgICAgICAgICAKPHNjcmlwdCB0
-        eXBlPSJ0ZXh0L2phdmFzY3JpcHQiPgpzZXRWYWx1ZSgieURIMFhTUUt2ZzJZ
-        djBsUXhZR3hRZm43MHE4eTR4bnN6SktLdGxCOTRqSk1LUDFTaG1GeSEtMTI1
-        OTk4OTc2MyExNDY1MDEyMjY2MTU4Iik7ICAgICAgICAgICAgCjwvc2NyaXB0
+        eXBlPSJ0ZXh0L2phdmFzY3JpcHQiPgpzZXRWYWx1ZSgiTFoxR1hTUkp5dGtO
+        M0hrMDh2SnBTYjg4OUtiTWgxQkxMNlgwcTd2aDV6R0xMSlNuWGNHRyEtMTI1
+        OTk4OTc2MyExNDY1MDEyNTg1MjE1Iik7ICAgICAgICAgICAgCjwvc2NyaXB0
         PiAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAKCjxzY3JpcHQgbGFu
         Z3VhZ2U9SmF2YVNjcmlwdD4KPCEtLQoKLy9EaXNhYmxlIHJpZ2h0IGNsaWNr
         IHNjcmlwdCBJSUktIEJ5IFJlbmlnYWRlIChyZW5pZ2FkZUBtZWRpYW9uZS5u
@@ -10573,8 +10567,8 @@ http_interactions:
         b249Ii9SSUIvaWIxMDEvaWJMb2dpblBhc3N3b3JkLmRvIiBvbnN1Ym1pdD0i
         cmV0dXJuIHZhbGlkYXRlSWJMb2dpblBhc3N3b3JkRm9ybTIodGhpcyk7Ij48
         aW5wdXQgdHlwZT0iaGlkZGVuIiBuYW1lPSJvcmcuYXBhY2hlLnN0cnV0cy50
-        YWdsaWIuaHRtbC5UT0tFTiIgdmFsdWU9IjU3MGYyNjg1NDk5ZDNiMDE1MDBi
-        ZWUzZGFiNDg4NmYwIj4NCgkJCQk8dGFibGUgd2lkdGg9IjEwMCUiIGJvcmRl
+        YWdsaWIuaHRtbC5UT0tFTiIgdmFsdWU9ImJkNmI0Mzk4ZmRkNDJhYTdiYmIy
+        ZDhiNDQ3MmI4NTZjIj4NCgkJCQk8dGFibGUgd2lkdGg9IjEwMCUiIGJvcmRl
         cj0iMCIgY2VsbHNwYWNpbmc9IjAiIGNlbGxwYWRkaW5nPSIwIj4NCgkJCQkJ
         PHRyIGNsYXNzPSJ0ck5vQm9yZGVyIj4NCgkJCQkJCTx0ZCB3aWR0aD0iMjUl
         Ij48c3BhbiBjbGFzcz0ic2lkZUxhYmVsIj5Vc2VybmFtZTo8L3NwYW4+PC90
@@ -10741,7 +10735,7 @@ http_interactions:
         dy1jbHIiPjwvZGl2PgoJCQk8L2Rpdj4KCQk8L2Rpdj4KCTwvZGl2Pgo8L2Jv
         ZHk+CjwvaHRtbD4K
     http_version: 
-  recorded_at: Sat, 04 Jun 2016 03:51:11 GMT
+  recorded_at: Sat, 04 Jun 2016 03:56:30 GMT
 - request:
     method: post
     uri: https://www.maybank2u.com.kh/RIB/ib101/ibLoginPassword.do
@@ -10765,7 +10759,7 @@ http_interactions:
       Content-Length:
       - '21228'
       Date:
-      - Sat, 04 Jun 2016 03:51:14 GMT
+      - Sat, 04 Jun 2016 03:56:33 GMT
       Connection:
       - keep-alive
     body:
@@ -10793,7 +10787,7 @@ http_interactions:
         src=\"/resources/my/js/common/jquery.min.js\"></script>\n<script language=\"JavaScript\"
         type=\"text/javascript\" src=\"/resources/my/js/common/des.js\"></script>\n<script
         language=\"JavaScript\" type=\"text/javascript\" src=\"/resources/my/js/common/cryption2.js\"></script>\n
-        \              \n<script type=\"text/javascript\">\nsetValue(\"yDH0XSQKvg2Yv0lQxYGxQfn70q8y4xnszJKKtlB94jJMKP1ShmFy!-1259989763!1465012266158\");
+        \              \n<script type=\"text/javascript\">\nsetValue(\"LZ1GXSRJytkN3Hk08vJpSb889KbMh1BLL6X0q7vh5zGLLJSnXcGG!-1259989763!1465012585215\");
         \           \n</script>                    \n          \n\n<script language=JavaScript>\n<!--\n\n//Disable
         right click script III- By Renigade (renigade@mediaone.net)\n//For full source
         code, visit http://www.dynamicdrive.com\n\nvar message=\"\";\n///////////////////////////////////\nfunction
@@ -10820,7 +10814,7 @@ http_interactions:
         class=\"m2ulogo clearfix\"></div>\r\n\t\t\t\t<div class=\"logoutbt clearfix\">\r\n\t\t\t\t\t\r\n\t\t\t\t\t\t<a
         href=\"/RIB/ib101/ibLogout.do\" target=\"_parent\" onclick=\"overlay();\"><span></span></a>\r\n\t\t\t\t\t\r\n\t\t\t\t</div>\r\n\t\t\t\t<div
         class=\"logdetails clearfix\">\r\n\t\t\t\t\t<span class=\"logdetailsbold\"><FILTERED_LOGIN_NAME></span><br>\r\n\t\t\t\t\tYour
-        last login was on&nbsp;Jun 4, 2016 10:48:36 AM\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t</section>\r\n</header>\r\n\r\n\t\t\t\t\t\t\t\t<!--
+        last login was on&nbsp;Jun 4, 2016 10:52:05 AM\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t</section>\r\n</header>\r\n\r\n\t\t\t\t\t\t\t\t<!--
         Header End -->\r\n\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div
         class=\"ls-row-clr\"></div>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t\t<div class=\"ls-row\"
         id=\"main\">\r\n\t\t\t<div class=\"ls-lqr\">\r\n\t\t\t\t<div class=\"ls-area
@@ -10845,7 +10839,7 @@ http_interactions:
         class=\"ls-area-body\">\r\n\t\t\t\t\r\n\t\t\t\r\n\t\t\t<div class=\"ls-cmp-wrap
         ls-1st\">\r\n\t\t\t\t<div class=\"iw_component\" id=\"12\">\r\n\t\t\t\t\t\r\n\t\t\t\t\t\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t<div
         class=\"masonryItem maxWidth290 yellowBg\" >\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t<a
-        href=\"/RIB/ib102/ibAccountSummary.do?SECONDARY_TOKEN=570f2685499d3b01500bee3dab4886f0&amp;nId=2\"
+        href=\"/RIB/ib102/ibAccountSummary.do?SECONDARY_TOKEN=bd6b4398fdd42aa7bbb2d8b4472b856c&amp;nId=2\"
         onclick=\"overlay();\"><img src=\"/resources/my/img/thumbnails/main_Accounts
         &amp; Banking/acc_sum.jpg\">\r\n\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t<h2>\r\n\t\t\t\t\t\t\t\t\t\tAccounts
         &amp; Banking\r\n\t\t\t\t\t\t\t\t\t</h2>\r\n\t\t\t\t\t\t\t\t\t<br />\r\n\t\t\t\t\t\t\t\t\t<span
@@ -10853,27 +10847,27 @@ http_interactions:
         />\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t\t\r\n\t\t\r\n\t\r\n\r\n\t\r\n\t\r\n\t\t\r\n\t\t\t\r\n\t\t\t\t\r\n\t\t\t\r\n\t\t\t<div
         class=\"ls-cmp-wrap ls-1st\">\r\n\t\t\t\t<div class=\"iw_component\" id=\"12\">\r\n\t\t\t\t\t\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\r\n\t\t\t\t\t\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\t<div
         class=\"masonryItem widthHalf yellowBg_Payments\" >\r\n\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t<a
-        href=\"/RIB/common/ibChannel.do?SECONDARY_TOKEN=570f2685499d3b01500bee3dab4886f0&amp;nId=21\"
+        href=\"/RIB/common/ibChannel.do?SECONDARY_TOKEN=bd6b4398fdd42aa7bbb2d8b4472b856c&amp;nId=21\"
         onclick=\"overlay();\"><h2>\r\n\t\t\t\t\t\t\t\t\t\tBills Payment\r\n\t\t\t\t\t\t\t\t\t</h2>\r\n\t\t\t\t\t\t\t\t\t<br
         />\r\n\t\t\t\t\t\t\t\t\t<span class=\"barTxt\"> </span></a>\r\n\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t<br
         />\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t\t\r\n\t\t\r\n\t\r\n\r\n\t\r\n\t\r\n\t\t\r\n\t\t\t\r\n\t\t\t\t\r\n\t\t\t\r\n\t\t\t<div
         class=\"ls-cmp-wrap ls-1st\">\r\n\t\t\t\t<div class=\"iw_component\" id=\"12\">\r\n\t\t\t\t\t\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\r\n\t\t\t\t\t\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\t<div
         class=\"masonryItem widthHalf cyanBg_Transfer mobileMarginRightNone desktopMarginRightNone\"
         >\r\n\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t<a
-        href=\"/RIB/common/ibChannelTransfer.do?SECONDARY_TOKEN=570f2685499d3b01500bee3dab4886f0&amp;nId=3\"
+        href=\"/RIB/common/ibChannelTransfer.do?SECONDARY_TOKEN=bd6b4398fdd42aa7bbb2d8b4472b856c&amp;nId=3\"
         onclick=\"overlay();\"><h2>\r\n\t\t\t\t\t\t\t\t\t\tFund Transfer\r\n\t\t\t\t\t\t\t\t\t</h2>\r\n\t\t\t\t\t\t\t\t\t<br
         />\r\n\t\t\t\t\t\t\t\t\t<span class=\"barTxt\"> </span></a>\r\n\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t<br
         />\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t\t\r\n\t\t\r\n\t\r\n\r\n\t\r\n\t\r\n\t\t\r\n\t\t\t\r\n\t\t\t\t\r\n\t\t\t\r\n\t\t\t<div
         class=\"ls-cmp-wrap ls-1st\">\r\n\t\t\t\t<div class=\"iw_component\" id=\"12\">\r\n\t\t\t\t\t\r\n\t\t\t\t\t\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\t<div
         class=\"masonryItem widthHalf yellowBg\" >\r\n\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t<a
-        href=\"/RIB/common/ibChannel.do?SECONDARY_TOKEN=570f2685499d3b01500bee3dab4886f0&amp;nId=87\"
+        href=\"/RIB/common/ibChannel.do?SECONDARY_TOKEN=bd6b4398fdd42aa7bbb2d8b4472b856c&amp;nId=87\"
         onclick=\"overlay();\"><h2>\r\n\t\t\t\t\t\t\t\t\t\tManage Favourite Bills\r\n\t\t\t\t\t\t\t\t\t</h2>\r\n\t\t\t\t\t\t\t\t\t<br
         />\r\n\t\t\t\t\t\t\t\t\t<span class=\"barTxt\"> </span></a>\r\n\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t<br
         />\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t\t\r\n\t\t\r\n\t\r\n\r\n\t\r\n\t\r\n\t\t\r\n\t\t\t\r\n\t\t\t\t\r\n\t\t\t\r\n\t\t\t<div
         class=\"ls-cmp-wrap ls-1st\">\r\n\t\t\t\t<div class=\"iw_component\" id=\"12\">\r\n\t\t\t\t\t\r\n\t\t\t\t\t\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\t<div
         class=\"masonryItem widthHalf yellowBg mobileMarginRightNone desktopMarginRightNone\"
         >\r\n\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t<a
-        href=\"/RIB/common/ibChannel.do?SECONDARY_TOKEN=570f2685499d3b01500bee3dab4886f0&amp;nId=41\"
+        href=\"/RIB/common/ibChannel.do?SECONDARY_TOKEN=bd6b4398fdd42aa7bbb2d8b4472b856c&amp;nId=41\"
         onclick=\"overlay();\"><h2>\r\n\t\t\t\t\t\t\t\t\t\tLoan\r\n\t\t\t\t\t\t\t\t\t</h2>\r\n\t\t\t\t\t\t\t\t\t<br
         />\r\n\t\t\t\t\t\t\t\t\t<span class=\"barTxt\"> </span></a>\r\n\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t<br
         />\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t\t\r\n\t\t\t\t\r\n\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t\r\n\t\t\r\n\t\r\n\r\n\t\r\n\t\r\n\t\t\r\n\t\t\t\r\n\t\t\t\t\r\n\t\t\t\t\t\r\n\t\t\t\t\t\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t<div\r\n\t\t\t\t\t\t\t\tclass=\"ls-area
@@ -10881,21 +10875,21 @@ http_interactions:
         class=\"ls-area-body\">\r\n\t\t\t\t\r\n\t\t\t\r\n\t\t\t<div class=\"ls-cmp-wrap
         ls-1st\">\r\n\t\t\t\t<div class=\"iw_component\" id=\"12\">\r\n\t\t\t\t\t\r\n\t\t\t\t\t\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t<div
         class=\"masonryItem maxWidth290 yellowBg\" >\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t<a
-        href=\"/RIB/common/ibChannel.do?SECONDARY_TOKEN=570f2685499d3b01500bee3dab4886f0&amp;nId=75\"
+        href=\"/RIB/common/ibChannel.do?SECONDARY_TOKEN=bd6b4398fdd42aa7bbb2d8b4472b856c&amp;nId=75\"
         onclick=\"overlay();\"><img src=\"/resources/my/img/common/trnfr_new-3rd-prt_s.jpg\">\r\n\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t<h2>\r\n\t\t\t\t\t\t\t\t\t\tCardless
         Withdrawal\r\n\t\t\t\t\t\t\t\t\t</h2>\r\n\t\t\t\t\t\t\t\t\t<br />\r\n\t\t\t\t\t\t\t\t\t<span
         class=\"barTxt\"> </span></a>\r\n\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t<br
         />\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t\t\r\n\t\t\r\n\t\r\n\r\n\t\r\n\t\r\n\t\t\r\n\t\t\t\r\n\t\t\t\t\r\n\t\t\t\r\n\t\t\t<div
         class=\"ls-cmp-wrap ls-1st\">\r\n\t\t\t\t<div class=\"iw_component\" id=\"12\">\r\n\t\t\t\t\t\r\n\t\t\t\t\t\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\t<div
         class=\"masonryItem widthHalf yellowBg\">\r\n\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t<a
-        href=\"/RIB/common/ibChannel.do?SECONDARY_TOKEN=570f2685499d3b01500bee3dab4886f0&amp;nId=22\"
+        href=\"/RIB/common/ibChannel.do?SECONDARY_TOKEN=bd6b4398fdd42aa7bbb2d8b4472b856c&amp;nId=22\"
         onclick=\"overlay();\"><h2>\r\n\t\t\t\t\t\t\t\t\t\tManage Favorite Transfers\r\n\t\t\t\t\t\t\t\t\t</h2>\r\n\t\t\t\t\t\t\t\t\t<br
         />\r\n\t\t\t\t\t\t\t\t\t<span class=\"barTxt\"> </span></a>\r\n\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t<br
         />\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t\t\r\n\t\t\r\n\t\r\n\r\n\t\r\n\t\r\n\t\t\r\n\t\t\t\r\n\t\t\t\t\r\n\t\t\t\r\n\t\t\t<div
         class=\"ls-cmp-wrap ls-1st\">\r\n\t\t\t\t<div class=\"iw_component\" id=\"12\">\r\n\t\t\t\t\t\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\r\n\t\t\t\t\t\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\t<div
         class=\"masonryItem widthHalf turquoiseBg_Settings mobileMarginRightNone desktopMarginRightNone\"
         >\r\n\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t<a
-        href=\"/RIB/common/ibChannel.do?SECONDARY_TOKEN=570f2685499d3b01500bee3dab4886f0&amp;nId=7\"
+        href=\"/RIB/common/ibChannel.do?SECONDARY_TOKEN=bd6b4398fdd42aa7bbb2d8b4472b856c&amp;nId=7\"
         onclick=\"overlay();\"><h2>\r\n\t\t\t\t\t\t\t\t\t\tUtilities\r\n\t\t\t\t\t\t\t\t\t</h2>\r\n\t\t\t\t\t\t\t\t\t<br
         />\r\n\t\t\t\t\t\t\t\t\t<span class=\"barTxt\"> </span></a>\r\n\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t<br
         />\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t\t\r\n\t\t\r\n\t\r\n\r\n\t\r\n\t\r\n\t\t\r\n\t\r\n\r\n\r\n\r\n\t</div>\r\n\t</div>\r\n\r\n\r\n\r\n\r\n\t\r\n\t\r\n\t\r\n\r\n\t\r\n\t\r\n\t\r\n\r\n\t\r\n\t\r\n\t\r\n\r\n\t\r\n\t\r\n\t\r\n\r\n\t\r\n\t\r\n\t\r\n\r\n\t\r\n\t\r\n\t\r\n\r\n\t\r\n\t\r\n\t\r\n\r\n\t\r\n\t\r\n\t\r\n\r\n\t\r\n\t\r\n\t\r\n\t\t<div
@@ -11004,5 +10998,256 @@ http_interactions:
         language=JavaScript>\r\nif (!Modernizr.touch) \r\n{   \r\n\tdocument.getElementById(\"hideTouchOnly\").style.display=\"block\";\r\n\tdocument.getElementById(\"5-column-id\").style.overflowX=\"hidden\";\r\n}
         \r\n\r\n</script> \r\n\t\r\n</body>\r\n</html>"
     http_version: 
-  recorded_at: Sat, 04 Jun 2016 03:51:15 GMT
+  recorded_at: Sat, 04 Jun 2016 03:56:33 GMT
+- request:
+    method: get
+    uri: https://www.maybank2u.com.kh/RIB/ib102/ibAccountSummary.do?SECONDARY_TOKEN=bd6b4398fdd42aa7bbb2d8b4472b856c&nId=2
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Cookie:
+      - "<Cookie>"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Oracle-iPlanet-Web-Server/7.0
+      Cache-Control:
+      - no-cache
+      Pragma:
+      - no-cache
+      Content-Type:
+      - text/html; charset=ISO-8859-1
+      Expires:
+      - Wed, 31 Dec 1969 23:59:59 GMT
+      X-Powered-By:
+      - Servlet/2.5 JSP/2.1
+      Content-Length:
+      - '19144'
+      Date:
+      - Sat, 04 Jun 2016 03:56:35 GMT
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: "\r\n\r\n\r\n\r\n\r\n\r\n<!DOCTYPE html>\r\n<html>\r\n<head>\r\n<META
+        http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n<title>Accounts
+        and Banking</title>\r\n<!-- CSS Start -->\r\n<link rel='shortcut icon' href='/resources/my/img/common/apple-touch-icon-l.png'>\n<link
+        rel='apple-touch-icon-precomposed' sizes='114x114' href='/resources/my/img/common/apple-touch-icon-h.png'>\n<link
+        rel='apple-touch-icon-precomposed' sizes='72x72' href='/resources/my/img/common/apple-touch-icon-m.png'>\n<link
+        rel='apple-touch-icon-precomposed' href='/resources/my/img/common/apple-touch-icon-l.png'>\n<link
+        rel='shortcut icon' href='/resources/my/img/common/apple-touch-icon-l.png'>\n<link
+        rel='apple-touch-icon' href='/resources/my/img/common/apple-touch-icon-l.png'>\n<meta
+        name='msapplication-TileImage' content='/resources/my/img/common/apple-touch-icon-144x144.png'>\n<meta
+        name='msapplication-TileColor' content='#222222'>\n<link rel='stylesheet'
+        href='/resources/my/css/en/reset.css'>\n<link rel='stylesheet' href='/resources/my/css/en/jquery-ui.css'>\n<link
+        rel='stylesheet' href='/resources/my/css/en/style.css'>\n<link rel='stylesheet'
+        href='/resources/my/css/en/style744.css'>\n<link rel='stylesheet' href='/resources/my/css/en/style992.css'>\n<script
+        src='/resources/my/js/common/libs/modernizr-2.5.3-respond-1.1.0.min.js'></script>\n\n<script
+        src=\"/resources/my/js/common/jquery.min.js\"></script>\n<script type=\"text/javascript\"
+        src=\"/resources/my/js/common/scripts.js\"></script>\n<script type=\"text/javascript\"
+        src=\"/resources/my/js/common/popup.js\"></script>\n<script type=\"text/javascript\"
+        src=\"/resources/my/js/common/common.js\"></script>\n<script type=\"text/javascript\"
+        src=\"/resources/my/js/common/ajax.js\"></script>\n\n\n\n<script type=\"text/javascript\"
+        src=\"/resources/my/js/common/jquery.min.js\"></script>\n<script language=\"JavaScript\"
+        type=\"text/javascript\" src=\"/resources/my/js/common/des.js\"></script>\n<script
+        language=\"JavaScript\" type=\"text/javascript\" src=\"/resources/my/js/common/cryption2.js\"></script>\n
+        \              \n<script type=\"text/javascript\">\nsetValue(\"LZ1GXSRJytkN3Hk08vJpSb889KbMh1BLL6X0q7vh5zGLLJSnXcGG!-1259989763!1465012585215\");
+        \           \n</script>                    \n          \n\n<script language=JavaScript>\n<!--\n\n//Disable
+        right click script III- By Renigade (renigade@mediaone.net)\n//For full source
+        code, visit http://www.dynamicdrive.com\n\nvar message=\"\";\n///////////////////////////////////\nfunction
+        clickIE() {if (document.all) {(message);return false;}}\nfunction clickNS(e)
+        {if \n(document.layers||(document.getElementById&&!document.all)) {\nif (e.which==2||e.which==3)
+        {(message);return false;}}}\nif (document.layers) \n{document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS;}\nelse{document.onmouseup=clickNS;document.oncontextmenu=clickIE;}\n\n//document.oncontextmenu=new
+        Function(\"return false\");\n\n// --> \n</script>\r\n<!-- CSS End -->\r\n</head>\r\n<body
+        onload=\"hideOverlay();\" onpageshow=\"hideOverlay();\">\r\n<div id=\"overlay\"
+        class=\"overlay\">\r\n\t<div id=\"overlayBox\" class=\"overlayBox\">\r\n\t\t<p><img
+        src=\"/resources/my/img/common/loader.gif\"></p>\r\n\t</div>\r\n\t<table id=\"div_table\"
+        onclick=\"promptMessage()\">\r\n\t<tr>\r\n\t\t<td id=\"div_td\" align=\"center\"
+        valign=\"middle\">\r\n\t\t</td>\r\n\t</tr>\r\n\t</table>\r\n</div>\r\n\t<div
+        class=\"ls-canvas 2-column sidebarNavPage tab2Selection\"\r\n\t\tid=\"2-column-id\">\r\n\t\t<div
+        class=\"ls-row\" id=\"ls-row-1\">\r\n\t\t\t<div class=\"ls-lqr\">\r\n\t\t\t\t<div
+        class=\"ls-area\" id=\"ls-row-1-area-1\">\r\n\t\t\t\t\t<div class=\"ls-area-body\">\r\n\t\t\t\t\t\t<div
+        class=\"ls-cmp-wrap ls-1st\">\r\n\t\t\t\t\t\t\t<div class=\"iw_component\">\r\n\t\t\t\t\t\t\t\t<!--
+        Header Start -->\r\n\t\t\t\t\t\t\t\t\r\n\r\n\r\n\r\n\r\n\r\n<header class=\"clearfix\">\r\n\t<!--[if
+        lte IE 8]>\r\n\t<p class=chromeframe>It looks like you're using an insecure
+        version of Internet Explorer. Using an outdated browser makes your computer
+        unsafe. For the best experience on the web, <a href=\"http://browsehappy.com/\">please
+        update your browser</a> or <a href=\"http://www.google.com/chromeframe/?redirect=true\">install
+        Google Chrome Frame</a>.</p>\r\n\t<![endif]-->\r\n\t<section class=\"clearfix\">\r\n\t\t<div
+        class=\"clearfix headerBar\">\r\n\t\t\t<div class=\"headerBarBorder clearfix\">\r\n\t\t\t\t<h1>\r\n\t\t\t\t\t<a
+        href=\"/RIB/ib101/ibWelcome.do\" accesskey=\"1\" class=\"ir\" onclick=\"overlay();\">Maybank</a>\r\n\t\t\t\t</h1>\r\n\t\t\t\t<div
+        class=\"m2ulogo clearfix\"></div>\r\n\t\t\t\t<div class=\"logoutbt clearfix\">\r\n\t\t\t\t\t\r\n\t\t\t\t\t\t<a
+        href=\"/RIB/ib101/ibLogout.do\" target=\"_parent\" onclick=\"overlay();\"><span></span></a>\r\n\t\t\t\t\t\r\n\t\t\t\t</div>\r\n\t\t\t\t<div
+        class=\"logdetails clearfix\">\r\n\t\t\t\t\t<span class=\"logdetailsbold\"><FILTERED_LOGIN_NAME></span><br>\r\n\t\t\t\t\tYour
+        last login was on&nbsp;Jun 4, 2016 10:52:05 AM\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t</section>\r\n</header>\r\n\r\n\t\t\t\t\t\t\t\t<!--
+        Header End -->\r\n\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t\t<div
+        class=\"ls-row-clr\"></div>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t\t<div class=\"ls-row
+        clearfix noHiresNav\" id=\"main\">\r\n\t\t\t<div class=\"ls-lqr\">\r\n\t\t\t\t<div
+        class=\"ls-area masonryOverall1 clearfix\" id=\"mbbDLayout1\">\r\n\t\t\t\t\t<div
+        class=\"ls-area-body\">\r\n\t\t\t\t\t\t<div class=\"ls-cmp-wrap ls-1st\">\r\n\t\t\t\t\t\t\t<div
+        class=\"iw_component\">\r\n\t\t\t\t\t\t\t\t<nav class=\"clearfix\" role=\"masonry\">\r\n\t\t\t\t\t\t\t\t\t<!--
+        TopNav Start -->\r\n\t\t\t\t\t\t\t\t\t\r\n\r\n\r\n\r\n\r\n\r\n\r\n<div class=\"portraitOnly
+        dropDownTrigger\"> <a class=\"ir\" href=\"#\">Expand menu</a> </div>\r\n<div
+        class=\"backTrigger\">\r\n\t<a href=\"/RIB/ib101/ibWelcome.do?SECONDARY_TOKEN=c736b0d614e977610c45679da0645f0e\"
+        accesskey=\"1\" class=\"ir\" onclick=\"overlay();\">Back</a>\r\n</div>\r\n\r\n\t\r\n\t\t\r\n\t\t\t<ul
+        class=\"clearfix subSections\">\r\n\r\n\t\t\t\t\r\n\r\n\t\t\t\t\r\n\t\t\t\t\t\r\n\t\t\t\t\t\t<!--
+        if selected node is ACC (first level)-->\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t<!--
+        if selected node is either ACC01.EN or CRDCREIT(second level)-->\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\r\n\r\n\t\t\t\t\t\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t<li
+        class=\"highlight\"><a href=\"/RIB/ib102/ibAccountSummary.do?SECONDARY_TOKEN=c736b0d614e977610c45679da0645f0e&amp;nId=4\"
+        accesskey=\"1\" onclick=\"overlay();\">All Accounts</a></li>\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\r\n\t\t\t\t\r\n\t\t\t\t\t\r\n\t\t\t\t\t\t<!--
+        if selected node is ACC (first level)-->\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t<!--
+        if selected node is either ACC01.EN or CRDCREIT(second level)-->\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t<!--
+        if no selected node (third level)-->\r\n\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\r\n\r\n\t\t\t\t\t\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\r\n\t\t\t\t\r\n\r\n\t\t\t\t\r\n\t\t\t\t\t\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\r\n\t\t\t\t\r\n\t\t\t\t\t\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t<li><a
+        href=\"/RIB/ib103/ibTcdAccountSummary.do?SECONDARY_TOKEN=c736b0d614e977610c45679da0645f0e&amp;nId=59\"
+        accesskey=\"1\" onclick=\"overlay();\">Fixed Deposit</a></li>\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\r\n\t\t\t\t\r\n\r\n\t\t\t</ul>\r\n\t\t\r\n\t\r\n\t\t\r\n\t\r\n\t\t\r\n\t\r\n\t\t\r\n\t\r\n\t\t\r\n\t\r\n\t\t\r\n\t\r\n\t\t\r\n\t\r\n\t\t\r\n\t\r\n\t\t\r\n\t\r\n\r\n\t\t\t\t\t\t\t\t\t<!--
+        TopNav End -->\r\n\t\t\t\t\t\t\t\t</nav>\r\n\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t<div
+        class=\"ls-row-clr\"></div>\r\n\t\t</div>\r\n\t</div>\r\n\t<div class=\"ls-row\"
+        id=\"ls-row-3\">\r\n\t\t<div class=\"ls-lqr\">\r\n\t\t\t<div class=\"ls-lqr-w\">\r\n\t\t\t\t<div
+        class=\"ls-lqr-w-fx\">\r\n\t\t\t\t\t<div class=\"ls-area noMasonry \" id=\"mbbDLayout2\">\r\n\t\t\t\t\t\t<div
+        class=\"ls-area-body\">\r\n\t\t\t\t\t\t\t<div class=\"ls-cmp-wrap ls-1st\">\r\n\t\t\t\t\t\t\t\t<div
+        class=\"iw_component\">\r\n\t\t\t\t\t\t\t\t\t<!-- Body Start -->\r\n\t\t\t\t\t\t\t\t\t\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n<div
+        class=\"blackBg\">\r\n\t<div class=\"clearfix\">\r\n\t\t<div id=\"contitle2\">\r\n\t\t\t<table
+        width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\">\r\n\t\t\t\t<tr>\r\n\t\t\t\t\t<td
+        width=\"33%\">\r\n\t\t\t\t\t\t<div style=\"text-align: left\">\r\n\t\t\t\t\t\t\tAll
+        Account Summary\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</td>\r\n\t\t\t\t</tr>\r\n\t\t\t</table>\r\n\t\t</div>\r\n\t</div>\r\n</div>\r\n\r\n\r\n<div
+        class=\"yellowBg\">\r\n\t<div class=\"clearfix\">\r\n\t\t<div id=\"contitle\">\r\n\t\t\t<table
+        width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\">\r\n\t\t\t\t<tr>\r\n\t\t\t\t\t<td
+        width=\"33%\">\r\n\t\t\t\t\t\t<div style=\"text-align: left\">\r\n\t\t\t\t\t\t\t<p><b>Notes:</b></p>\r\n\t\t\t\t\t\t\t<p>You
+        can view summary of Current Account/Saving Account. Account display a maximum
+        of up to 7 CASA in one page. If there are more than 7 accounts, system will
+        display the accounts in multiple page. There will be a \"Next\" hyperlink.</p>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</td>\r\n\t\t\t\t</tr>\r\n\t\t\t</table>\r\n\t\t</div>\r\n\t</div>\r\n</div>\r\n\r\n\r\n\r\n\r\n\t\r\n\t\r\n\r\n\t\r\n\t\t\r\n\t\t\r\n\t\t\t\r\n\t\t\r\n\t\t\r\n\t\t\r\n\t\t\r\n\t\t<div
+        class=\"articleContentStatic whiteBG\">\r\n\t\t\t<div class=\"expandedWrap1\">\r\n\t\t\t\t\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"clearfix  desktoptableWrapper  minHeight160\">\r\n\t\t\t\t\t<table
+        class=\"tabularData widthpercent\" width=\"100%\" cellspacing=\"0\" cellpadding=\"0\"
+        border=\"0\">\r\n\t\t\t\t\t\t<thead>\r\n\t\t\t\t\t\t\t<tr>\r\n\t\t\t\t\t\t\t\t<th
+        id=\"col-4\" class=\"essential\">Current Account(s)</th>\r\n\t\t\t\t\t\t\t\t<th
+        id=\"col-5\" class=\"optional\">Current Balance</th>\r\n\t\t\t\t\t\t\t\t<th
+        id=\"col-6\" class=\"essential\">Available Balance</th>\r\n\t\t\t\t\t\t\t</tr>\r\n\t\t\t\t\t\t</thead>\r\n\t\t\t\t\t\t<tbody>\r\n\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t<tr
+        class=\"even\">\r\n\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\t<td class=\"title
+        fontSize12\">\r\n\t\t\t\t\t\t\t\t\t\t\t \r\n\t\t\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\t\t<a
+        href=\"/RIB/ib102/ibAccountInfo.do?acctNo=<FILTERED_ACCOUNT_NUMBER_1>&amp;acctType=CA&amp;SECONDARY_TOKEN=c736b0d614e977610c45679da0645f0e&amp;nId=2\"
+        onclick=\"overlay();\">\r\n\t\t\t\t\t\t\t\t\t\t\t\t<u>Current Account</u>\r\n\t\t\t\t\t\t\t\t\t\t\t<br/>\r\n\t\t\t\t\t\t\t\t\t\t\t<FILTERED_ACCOUNT_NUMBER_1>\r\n\t\t\t\t\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t\t\t\t\t</td>\r\n\t\t\t\t\t\t\t\t\t\t<td
+        align=\"left\">\r\n\t\t\t\t\t\t\t\t\t\t\t<span>USD</span>\r\n\t\t\t\t\t\t\t\t\t\t\t<span
+        class=\"tbl_number\"> 3,246.37</span>\r\n\t\t\t\t\t\t\t\t\t\t</td>\r\n\t\t\t\t\t\t\t\t\t\t<td
+        align=\"left\">\r\n\t\t\t\t\t\t\t\t\t\t\t<span>USD</span>\r\n\t\t\t\t\t\t\t\t\t\t\t<span
+        class=\"tbl_number\"> 3,204.31</span>\r\n\t\t\t\t\t\t\t\t\t\t</td>\r\n\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t</tr>\r\n\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t</tbody>\r\n\t\t\t\t\t</table>\r\n\t\t\t\t\t<br/>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t\r\n\t\t\t\t\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t\r\n\t\t\r\n\t\r\n\r\n\t<br
+        />\r\n\t\r\n\t\r\n\r\n\r\n\t\t\t\t\t\t\t\t\t<!-- Body End -->\r\n\t\t\t\t\t\t\t\t\t<!--
+        Submenu Start -->\r\n\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t<!-- Submenu
+        End -->\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t
+        \         <div class=\"ls-area\" id=\"mbbDLayout3\">\r\n\t            <div
+        class=\"ls-area-body\">\r\n\t              <div class=\"ls-cmp-wrap ls-1st\">\r\n\t
+        \               <div class=\"iw_component\">\r\n\t                  <aside
+        class=\"maxWidth290 sidebarNav\"></aside>\r\n\t                </div>\r\n\t
+        \             </div>\r\n\t            </div>\r\n\t          </div>\r\n\t        </div>\r\n\t\t\t\t<div
+        class=\"ls-area crossSellWrap clearfix\" id=\"mbbDLayout4\">\r\n\t\t\t\t\t<div
+        class=\"ls-area-body\">\r\n\t\t\t\t\t\t<div class=\"ls-cmp-wrap ls-1st\">\r\n\t\t\t\t\t\t\t<div
+        class=\"iw_component\">\r\n\t\t\t\t\t\t\t\t<div class=\"dynamicMasonry clearfix
+        maxWidth290\">\r\n\t\t\t\t\t\t\t\t\t<!-- RightBlocks Start -->\r\n\t\t\t\t\t\t\t\t\t\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\t\r\n\t\r\n\t\t\r\n\t\r\n\t\r\n\t\t\r\n\t\t\t<div
+        class=\"masonryItem  yellowBg_Payments  widthHalf\">\r\n\t\t\r\n\t\t\r\n\t\r\n\t\r\n\t\r\n\t\t\r\n\t\t\r\n\t\t\r\n\t\t\r\n\t\t\t<a
+        href=\"/RIB/common/ibChannel.do?SECONDARY_TOKEN=c736b0d614e977610c45679da0645f0e&amp;nId=21\"
+        onclick=\"overlay();\"><h2>\r\n\t\t\t\t\tBills Payment\r\n\t\t\t\t</h2>\r\n\t\t\t\t<br
+        />\r\n\t\t\t\t<span class=\"barTxt\"></span></a>\r\n\t\t\r\n\t\r\n\t<br />\r\n\t</div>\r\n\r\n\t\r\n\t\r\n\t\t\r\n\t\r\n\t\r\n\t\t\r\n\t\t\r\n\t\t\t<div\r\n\t\t\t\tclass=\"masonryItem
+        \ cyanBg_Transfer  widthHalf mobileMarginRightNone desktopMarginRightNone
+        \">\r\n\t\t\r\n\t\r\n\t\r\n\t\r\n\t\t\r\n\t\t\r\n\t\t\r\n\t\t\r\n\t\t\t<a
+        href=\"/RIB/common/ibChannelTransfer.do?SECONDARY_TOKEN=c736b0d614e977610c45679da0645f0e&amp;nId=3\"
+        onclick=\"overlay();\"><h2>\r\n\t\t\t\t\tFund Transfer\r\n\t\t\t\t</h2>\r\n\t\t\t\t<br
+        />\r\n\t\t\t\t<span class=\"barTxt\"></span></a>\r\n\t\t\r\n\t\r\n\t<br />\r\n\t</div>\r\n\r\n\t\r\n\t\r\n\t\t\r\n\t\r\n\t\r\n\t\t\r\n\t\t\t<div
+        class=\"masonryItem  redBg  widthHalf\">\r\n\t\t\r\n\t\t\r\n\t\r\n\t\r\n\t\r\n\t\t\r\n\t\t\r\n\t\t\t<a
+        href=\"http://www.maybank2u.com.kh/cambodia/#section5\" target=\"_new\">\r\n\t\t\t\t<h2>\r\n\t\t\t\t\tContact
+        Us\r\n\t\t\t\t</h2>\r\n\t\t\t\t<br />\r\n\t\t\t\t<span class=\"barTxt\"> </span>\r\n\t\t\t</a>\r\n\t\t\r\n\t\t\r\n\t\t\r\n\t\r\n\t<br
+        />\r\n\t</div>\r\n\r\n\r\n\t\t\t\t\t\t\t\t\t<!-- RightBlocks End -->\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t<div
+        class=\"ls-lqa-fix\">&nbsp;</div>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t\t<div
+        class=\"ls-row-clr\"></div>\r\n\t\t</div>\r\n\t</div>\r\n\t<div class=\"ls-row\"
+        id=\"ls-row-4\">\r\n\t\t<div class=\"ls-lqr\">\r\n\t\t\t<div class=\"ls-area\"
+        id=\"ls-row-4-area-1\">\r\n\t\t\t\t<div class=\"ls-area-body\">\r\n\t\t\t\t\t<div
+        class=\"ls-cmp-wrap ls-1st\">\r\n\t\t\t\t\t\t<div class=\"iw_component\">\r\n\t\t\t\t\t\t\t<!--
+        Copyright Start -->\r\n\t\t\t\t\t\t\t\n<footer class=\"clearfix\">\n\t<p>\n\t\t&copy;\n\t\t2001-14
+        Maybank (Company No, 3813-K). All rights reserved.\n\n\t\t<a href=\"http://www.maybank2u.com.kh/cambodia_tnc.html\"
+        target=\"_blank\">Terms &amp; Conditions</a> |\n\t\t<a href=\"http://www.maybank2u.com.kh/cambodia_privacy.html\"
+        target=\"_blank\">Security, Privacy &amp; Client Charter</a> |\n\t\tFAQ\n\t</p>\n</footer>\n\n<div
+        class=\"outGoingAlert yellowBg\">\n\t<div class=\"outGoingHeader\">\n\t\t<div
+        class=\"outGoingHeaderClose\">\n\t\t\t<a class=\"ir\" href=\"#\">Close</a>\n\t\t</div>\n\t\t<div
+        class=\"outGoingHeaderTitle\">Notes</div>\n\t</div>\n\t<div class=\"outGoingData\">\n\t\t<p>You
+        are about to be redirected away from Maybank.com</p>\n\t\t<p>\n\t\t\t<a class=\"outgoingProceed\"
+        href=\"#\"\n\t\t\t\tonClick=\"recordOutgoingLink(this);return false;\">Proceed</a><a\n\t\t\t\tclass=\"outgoingCancel\"
+        href=\"#\">Cancel</a>\n\t\t</p>\n\t</div>\n</div>\r\n\t\t\t\t\t\t\t<!-- Copyright
+        End -->\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t<div class=\"ls-cmp-wrap\">\r\n\t\t\t\t\t\t<div
+        class=\"iw_component\">\r\n\t\t\t\t\t\t\t\t<!-- Footer Start -->\r\n\t\t\t\t\t\t\t\t<!--
+        \r\n<script type=\"text/javascript\">\r\n\twindow.jQuery || \r\n\t\tdocument.write(unescape(\"%3Cscript
+        src='%3Cxsl:text%3E/resources/ph/%3C/xsl:text%3E%3Cxsl:value-of select='$sitename'/%3E%3Cxsl:text%3E/resources/my/js/common/jquery.min.js%3C/xsl:text%3E'
+        type='text/javascript'%3E%3C/script%3E\"));\r\n</script>\r\n\t -->\r\n<script
+        type=\"text/javascript\" src=\"/resources/my/js/common/libs/jquery.easing.1.3.js\"></script>\r\n<script
+        type=\"text/javascript\" src=\"/resources/my/js/common/libs/jquery.flexslider-min.js\"></script>\r\n<script
+        type=\"text/javascript\" src=\"/resources/my/js/common/libs/jquery.fittext.js\"></script>\r\n<script
+        type=\"text/javascript\" src=\"/resources/my/js/common/libs/TweenLite.min.js\"></script>\r\n<script
+        type=\"text/javascript\" src=\"/resources/my/js/common/libs/plugins/CSSPlugin.min.js\"></script>\r\n<script
+        type=\"text/javascript\" src=\"/resources/my/js/common/libs/easing/EasePack.min.js\"></script>\r\n<script
+        type=\"text/javascript\" src=\"/resources/my/js/common/libs/jquery.event.move.js\"></script>\r\n<script
+        type=\"text/javascript\" src=\"/resources/my/js/common/libs/jquery.event.swipe.js\"></script>\r\n<script
+        type=\"text/javascript\" src=\"/resources/my/js/common/libs/ios6timer.js\"></script>\r\n<script
+        type=\"text/javascript\">\r\n// Add a script element as a child of the body\r\nfunction
+        downloadJSAtOnload() {\r\n\tvar element = document.createElement(\"script\");\r\n\telement.src
+        = \"/resources/my/js/common/script.js\";\r\n\tdocument.body.appendChild(element);\r\n}\r\n//
+        Check for browser support of event handling capability\r\nif (window.addEventListener)\r\n\twindow.addEventListener(\"load\",\r\n\t\t\tdownloadJSAtOnload,
+        false);\r\nelse if (window.attachEvent)\r\n\twindow.attachEvent(\"onload\",\r\n\t\t\t\tdownloadJSAtOnload);\r\nelse\r\n\twindow.onload
+        = downloadJSAtOnload;\r\n</script>\r\n<link rel=\"stylesheet\" href=\"/resources/my/css/en/mediaelementplayer.css\">\r\n<script
+        src=\"/resources/my/js/common/libs/mediaelement-and-player.min.js\"></script>\r\n<script>\r\n\t$('video').mediaelementplayer();\r\n</script>\r\n\r\n\t\t\t\t\t\t\t\t<!--
+        Footer End -->\r\n\t\t\t\t\t\t\t\t\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n<!--\r\n<div
+        id=\"txt\"></div><br/>\r\nStart time :<div id=\"txt2\"></div>-->\r\n<input
+        type=\"hidden\" name=\"lastEvent\" id=\"lastEvent\" value=\"\" />\r\n<script
+        type=\"text/javascript\">\r\n<!--\r\n    var NN4 = (document.layers) ? true
+        : false\r\n\tvar IE4 = (document.layers) ? false : true\r\n\r\n\t// The timeout
+        remainder should be set 30 seconds\r\n\t// before the real time out (10 minutes).\r\n\t//var
+        timeoutLimit = 9.5; // 9.5 minutes\r\n\tvar timeoutLimit = 4.5; // 4.5 minutes
+        - TIMEOUT\r\n\r\n\ttimeoutLimit *= 60 * 1000; // convert to miliseconds\r\n\r\n\tvar
+        lastEvent;\r\n\r\n\t//30000 is 0.5 minute\r\n\tfunction display_dialog_box()\r\n\t{\r\n\t\tvar
+        date = new Date();\r\n\t\tvar date2;\r\n\t\tvar hours = convertTimeDisplay(date.getHours());\r\n\t\tvar
+        minutes = convertTimeDisplay(date.getMinutes());\r\n\t\tvar seconds = convertTimeDisplay(date.getSeconds());\r\n
+        \       var p1='Warning';\r\n\t\tvar p2='Your session will expire in 30 seconds
+        starting from ';\r\n\t\tvar p3='Click OK to continue, or Cancel to logout.';\r\n\r\n\t
+        \   var fulltimeMsg=\tp1+'\\n'+p2+hours+':'+minutes+':'+seconds+'.\\n'+p3;\r\n
+        \t\tif( confirm(fulltimeMsg) )\r\n \t\t{\r\n\t\t\tdate2 = new Date();\r\n\t\t\tvar
+        timeAfterResponse = date2.getTime();\r\n\t\t\tif((parseInt(timeAfterResponse)
+        - parseInt(lastEvent)) >= (timeoutLimit+30000))\r\n\t\t\t{\r\n\t\t\t\tgo_to_logout();\r\n\t\t\t}\r\n\t\t\telse\r\n\t\t\t{\r\n\t\t\t
+        \ resetBvSessionThruActionUsingAjaxPage();\r\n\t\t\t  lastEvent = null;\r\n\t\t\t
+        \ updateLastEvent();\r\n\t\t\t}\r\n\t\t}\r\n\t\telse\r\n\t\t{\r\n\t\t\tgo_to_logout();\r\n\t\t}\r\n\t}\r\n\r\n\tfunction
+        check_for_timeout()\r\n\t{\r\n\t\tvar date = new Date();\r\n\t\tvar currentTime
+        = date.getTime();\r\n\t\tif((parseInt(currentTime) - parseInt(lastEvent))
+        < timeoutLimit)\r\n\t\t{\r\n\t\t\tsetTimeout('check_for_timeout()', 10000);\r\n\t\t}\r\n\t\telse\r\n\t\t{\r\n\t\t\tdisplay_dialog_box();\r\n\t\t}\r\n\t}\r\n\r\n\tfunction
+        convertTimeDisplay(num)\r\n\t{\r\n\t\tif (num < 10)\r\n\t\t{\r\n\t\t\treturn
+        new String(\"0\"+num);\r\n\t\t}\r\n\t\telse\r\n\t\t{\r\n\t\t\treturn new String(num);\r\n\t\t}\r\n\t}\r\n\r\n\tfunction
+        updateLastEvent()\r\n\t{\r\n\r\n\t\tvar date = new Date();\r\n\t\tvar time
+        = date.getTime();\r\n\t\tlastEvent = time;\r\n\t\t//document.getElementById('lastEvent').value
+        = time;\r\n\t\tsetTimeout('check_for_timeout()', 10000);\r\n\t}\r\n\r\n\tfunction
+        go_to_logout()\r\n\t{\r\n\t\t// ori method\r\n\t\t// parent.location.href='https://www.maybank2u.com.kh:443/RIB/ib101/ibLogout.do';\r\n\t\t//
+        Added 23/01/2014\r\n\t\tvar url = parent.location.href;\r\n\t\turl = url.substring
+        (0, url.indexOf (\"/common/Login.do\"));\r\n\t\tparent.location.href = url+'/ib101/ibLogout.do';\r\n\t}\r\n\r\n\r\n\r\n
+        \    function resetBvSessionThruActionUsingAjaxPage()\r\n     {\r\n    \t//
+        ori method\r\n\t \t// loadAjaxReset ('https://www.maybank2u.com.kh:443/RIB/common/ibResetSession.do');\r\n
+        \   \t// Added 23/01/2014 \r\n\t \tvar url = parent.location.href;\r\n \t\turl
+        = url.substring (0, url.indexOf (\"/common/Login.do\"));\r\n \t\turl = url+'/common/ibResetSession.do';\r\n
+        \t\t\r\n \t\tloadAjaxReset (url);\r\n     }\r\n\r\n//-----------------------------------\r\n\tfunction
+        resetTimeOut()\r\n\t{\r\n\t\tvar t;\r\n\t\tclearTimeout(t);\r\n\t}\r\n\r\n//--------------------------------\r\n\tfunction
+        startTime()\r\n\t{\r\n\t\tvar today=new Date();\r\n\t\tvar h=today.getHours();\r\n\t\tvar
+        m=today.getMinutes();\r\n\t\tvar s=today.getSeconds();\r\n\t\t// add a zero
+        in front of numbers<10\r\n\t\tm=checkTime(m);\r\n\t\ts=checkTime(s);\r\n\t\tdocument.getElementById('txt').innerHTML=h+\":\"+m+\":\"+s;\r\n\t\tt=setTimeout('startTime()',500);\r\n\t}\r\n\r\n
+        \   function printTime()\r\n\t{\r\n\t\tvar today=new Date();\r\n\t\tvar h=today.getHours();\r\n\t\tvar
+        m=today.getMinutes();\r\n\t\tvar s=today.getSeconds();\r\n\t\tm=checkTime(m);\r\n\t\ts=checkTime(s);\r\n\t\tdocument.getElementById('txt2').innerHTML=h+\":\"+m+\":\"+s;\r\n\t}\r\n\r\n\r\n\tfunction
+        checkTime(i)\r\n\t{\r\n\t\tif (i<10)\r\n\t\t  {\r\n\t\t  i=\"0\" + i;\r\n\t\t
+        \ }\r\n\t\treturn i;\r\n\t}\r\n\r\nfunction loadAjaxReset (resetURL)\r\n{\r\n\r\n\tvar
+        xmlHttp = null;\r\n\ttry\r\n  \t{  // Firefox, Opera 8.0+, Safari\r\n  \t\txmlHttp=new
+        XMLHttpRequest();\r\n  \t}\r\n\tcatch (e)\r\n  \t{  // Internet Explorer\r\n
+        \ \t\ttry\r\n    \t{\r\n    \t\txmlHttp=new ActiveXObject(\"Msxml2.XMLHTTP\");\r\n
+        \   \t}\r\n  \t\tcatch (e)\r\n    \t{\r\n    \t\ttry\r\n      \t\t{\r\n      \t\t\txmlHttp=new
+        ActiveXObject(\"Microsoft.XMLHTTP\");\r\n      \t\t}\r\n    \t\tcatch (e)\r\n
+        \     \t\t{\r\n      \t\t\treturn false;\r\n      \t\t}\r\n      \t}\r\n\t}\r\n\txmlHttp.onreadystatechange=function()\r\n
+        \   {\r\n    if(xmlHttp.readyState==4)\r\n      {\r\n      \tdocument.getElementById('lastEvent').value=xmlHttp.responseText;\r\n
+        \     }\r\n    }\r\n\txmlHttp.open(\"GET\",resetURL,true);\r\n\txmlHttp.send(null);\r\n}\r\n\r\n//startTime();\r\n//printTime();\r\n//--------------------------------\r\n\tupdateLastEvent();\r\n\r\n\t//-->\r\n</script>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t\t<div
+        class=\"ls-row-clr\"></div>\r\n\t\t</div>\r\n\t</div>\r\n</body>\r\n</html>"
+    http_version: 
+  recorded_at: Sat, 04 Jun 2016 03:56:35 GMT
 recorded_with: VCR 3.0.3

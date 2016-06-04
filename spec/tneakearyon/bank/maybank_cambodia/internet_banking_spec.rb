@@ -3,27 +3,61 @@ require 'spec_helper'
 describe Tneakearyon::Bank::MaybankCambodia::InternetBanking do
   subject { described_class.new }
 
+  def do_internet_banking_request!(options = {}, &block)
+    VCR.use_cassette(options[:cassette]) { yield }
+  end
+
   describe "#login_details" do
     let(:result) { subject.login_details }
-
-    def fetch_login_details!(options = {})
-      VCR.use_cassette(options[:cassette]) do
-        result
-      end
-    end
 
     context "given the correct credentials" do
       # assumes correct credentials are set in .env
       before do
-        fetch_login_details!(:cassette => "maybank_cambodia/web_client/fetch_login_details")
+        do_internet_banking_request!(:cassette => "maybank_cambodia/web_client/fetch_login_details") { result }
       end
 
-      it { expect(result.name).not_to eq(nil) }
+      it { expect(result.name).to eq(ENV["TNEAKEARYON_TEST_FILTERED_DATA_LOGIN_NAME"]) }
     end
 
     context "given incorrect credentials" do
       subject { described_class.new(:username => "wrong", :password => "wrong") }
-      it { expect { fetch_login_details!(:cassette => "maybank_cambodia/web_client/incorrect_credentials") }.to raise_error(RuntimeError) }
+      it { expect { do_internet_banking_request!(:cassette => "maybank_cambodia/web_client/incorrect_credentials") { result } }.to raise_error(RuntimeError) }
+    end
+  end
+
+  describe "#bank_accounts" do
+    let(:result) { subject.bank_accounts }
+
+    before do
+      do_internet_banking_request!(:cassette => "maybank_cambodia/web_client/fetch_bank_accounts") { result }
+    end
+
+    def assert_bank_accounts!
+      bank_account = result.first
+      expect(bank_account.number).to eq(ENV["TNEAKEARYON_TEST_FILTERED_DATA_ACCOUNT_NUMBER_1"])
+      expect(bank_account.current_balance).to be_a(Money)
+      expect(bank_account.available_balance).to be_a(Money)
+    end
+
+    it { assert_bank_accounts! }
+  end
+
+  describe "#create_third_party_transfer!(options = {})" do
+    let(:to_account) { ENV["TNEAKEARYON_TEST_FILTERED_DATA_THIRD_PARTY_TRANSFER_TO_ACCOUNT_NUMBER"] }
+    let(:amount) { Money.new(1, "USD") }
+    let(:email) { "someone@gmail.com" }
+
+    let(:options) { { :to_account => to_account, :amount => amount, :email => email } }
+    let(:result) { subject.create_third_party_transfer!(options) }
+
+    context "if the :to_account number is incorrect" do
+      let(:to_account) { "wrong" }
+
+      before do
+        do_internet_banking_request!(:cassette => "maybank_cambodia/web_client/execute_third_party_transfer_invalid_third_party_account_number") { result }
+      end
+
+      it { expect(result.error_message).to eq("The 3rd party account number is invalid.") }
     end
   end
 end

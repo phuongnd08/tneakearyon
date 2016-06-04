@@ -13,9 +13,11 @@ class Tneakearyon::Bank::MaybankCambodia::InternetBanking
     @bank_accounts ||= fetch_bank_accounts
   end
 
-  def create_transfer!(options = {})
-    transfer_response = client.transfer!(options)
-    Tneakearyon::Transfer.new(:amount => transfer_response[:amount])
+  def create_third_party_transfer!(options = {})
+    transfer_response = client.execute_third_party_transfer!(options)
+    Tneakearyon::Transfer.new(
+      :amount => transfer_response[:amount], :error_message => transfer_response[:error_message]
+    )
   end
 
   private

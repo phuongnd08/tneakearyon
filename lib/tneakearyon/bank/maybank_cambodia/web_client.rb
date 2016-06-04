@@ -17,7 +17,8 @@ class Tneakearyon::Bank::MaybankCambodia::WebClient
     :form_token_input_name              => "org.apache.struts.taglib.html.TOKEN",
     :login_name                         => "logdetailsbold",
     :account_number_query_string_param  => "acctNo",
-    :secondary_token_query_string_param => "SECONDARY_TOKEN"
+    :secondary_token_query_string_param => "SECONDARY_TOKEN",
+    :server_side_error                  => "serverSideError"
   }
 
   WHITELISTED_COOKIE_NAMES = ["M2UMCI"]
@@ -45,8 +46,10 @@ class Tneakearyon::Bank::MaybankCambodia::WebClient
     bank_accounts
   end
 
-  def transfer!(options = {})
-    raise(ArgumentError, "You must pass from_account, :to_account and :amount") if !options.has_key?(:from_account) || !options.has_key?(:to_account) || !options.has_key?(:amount)
+  def execute_third_party_transfer!(options = {})
+    default_from_account = ENV["TNEAKEARYON_BANK_MAYBANK_CAMBODIA_DEFAULT_TRANSFER_FROM_ACCOUNT_NUMBER"]
+    options[:from_account] ||= default_from_account if default_from_account
+    raise(ArgumentError, "You must pass :from_account, :to_account and :amount") if !options.has_key?(:from_account) || !options.has_key?(:to_account) || !options.has_key?(:amount)
     login! if !logged_in?
     get_third_party_transfer_details!
     post_third_party_transfer_confirm!(options)
@@ -97,11 +100,18 @@ class Tneakearyon::Bank::MaybankCambodia::WebClient
   end
 
   def post_third_party_transfer_confirm!(options = {})
-    HTTParty.post(
-      ib_third_party_transfer_confirm_endpoint,
-      :body => set_third_party_transfer_request_body(options),
-      :headers => set_headers
+    set_html_response(
+      HTTParty.post(
+        ib_third_party_transfer_confirm_endpoint,
+        :body => set_third_party_transfer_request_body(options),
+        :headers => set_headers
+      )
     )
+    if error_element = html_response.at_xpath("//*[@id='#{page_element(:server_side_error)}']")
+      {:error_message => error_element.text.strip}
+    else
+      {}
+    end
   end
 
   def set_third_party_transfer_request_body(options = {})
