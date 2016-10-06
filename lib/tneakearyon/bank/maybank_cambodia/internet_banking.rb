@@ -16,7 +16,13 @@ class Tneakearyon::Bank::MaybankCambodia::InternetBanking
   def create_third_party_transfer!(options = {})
     transfer_response = client.execute_third_party_transfer!(options)
     Tneakearyon::Transfer.new(
-      :amount => transfer_response[:amount], :error_message => transfer_response[:error_message]
+      :amount => transfer_response[:amount],
+      :error_message => transfer_response[:error_message],
+      :from_account_number => transfer_response[:from_account_number],
+      :to_account_number => transfer_response[:to_account_number],
+      :to_account_name => transfer_response[:to_account_name],
+      :email => transfer_response[:email],
+      :effective_date => transfer_response[:effective_date]
     )
   end
 

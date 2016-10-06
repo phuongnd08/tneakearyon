@@ -59,5 +59,22 @@ describe Tneakearyon::Bank::MaybankCambodia::InternetBanking do
 
       it { expect(result.error_message).to eq("The 3rd party account number is invalid.") }
     end
+
+    context "the :to_account is correct" do
+      before do
+        do_internet_banking_request!(:cassette => "maybank_cambodia/web_client/execute_third_party_transfer") { result }
+      end
+
+      def assert_transfer!
+        expect(result.amount).to eq(amount)
+        expect(result.from_account_number).to eq(ENV["TNEAKEARYON_TEST_FILTERED_DATA_ACCOUNT_NUMBER_1"])
+        expect(result.to_account_number).to eq(to_account)
+        expect(result.to_account_name).to eq(ENV["TNEAKEARYON_TEST_FILTERED_DATA_THIRD_PARTY_TRANSFER_TO_ACCOUNT_NAME"])
+        expect(result.email).to eq(email)
+        expect(result.effective_date).to be_a(Date)
+      end
+
+      it { assert_transfer! }
+    end
   end
 end

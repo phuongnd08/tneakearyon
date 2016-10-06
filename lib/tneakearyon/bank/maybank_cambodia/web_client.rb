@@ -107,11 +107,31 @@ class Tneakearyon::Bank::MaybankCambodia::WebClient
         :headers => set_headers
       )
     )
-    if error_element = html_response.at_xpath("//*[@id='#{page_element(:server_side_error)}']")
-      {:error_message => error_element.text.strip}
+    error_element = html_response.at_xpath("//*[@id='#{page_element(:server_side_error)}']")
+    error_message = error_element && error_element.text.strip
+
+    if error_message && !error_message.empty?
+      {:error_message => error_message}
     else
-      {}
+      extract_transfer_details(options[:to_account])
     end
+  end
+
+  def extract_transfer_details(known_value)
+    to_account_xpath = "//td[contains(., '#{known_value}')]"
+    transfer_info = html_response.at_xpath(to_account_xpath).ancestors("table").search("tr")
+    {
+      :amount => Monetize.parse(table_value(transfer_info[0], 1)),
+      :from_account_number => table_value(transfer_info[1], 1),
+      :to_account_number => table_value(transfer_info[2], 1),
+      :to_account_name => table_value(transfer_info[3], 1),
+      :email => table_value(transfer_info[4], 1),
+      :effective_date => Date.parse(table_value(transfer_info[5], 1))
+    }
+  end
+
+  def table_value(row, column)
+    row.search("td")[column].text.strip
   end
 
   def set_third_party_transfer_request_body(options = {})
@@ -184,11 +204,10 @@ class Tneakearyon::Bank::MaybankCambodia::WebClient
 
     html_response.at_xpath(account_info_link_xpath).ancestors("tbody").first.search("tr").each do |row|
       account_number = parse_url_query_string(row.at_xpath(account_info_link_xpath)["href"])[page_element(:account_number_query_string_param)]
-      columns = row.search("td")
       self.bank_accounts << {
         :number => account_number,
-        :current_balance => Monetize.parse(columns[1].text),
-        :available_balance => Monetize.parse(columns[2].text)
+        :current_balance => Monetize.parse(table_value(row, 1)),
+        :available_balance => Monetize.parse(table_value(row, 2))
       }
     end
 
