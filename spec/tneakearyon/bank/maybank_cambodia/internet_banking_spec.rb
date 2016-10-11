@@ -46,8 +46,9 @@ describe Tneakearyon::Bank::MaybankCambodia::InternetBanking do
     let(:to_account) { ENV["TNEAKEARYON_TEST_FILTERED_DATA_THIRD_PARTY_TRANSFER_TO_ACCOUNT_NUMBER"] }
     let(:amount) { Money.new(1, "USD") }
     let(:email) { "someone@gmail.com" }
+    let(:tac) { "123456" }
 
-    let(:options) { { :to_account => to_account, :amount => amount, :email => email } }
+    let(:options) { { :to_account => to_account, :amount => amount, :email => email, :tac => tac } }
     let(:result) { subject.create_third_party_transfer!(options) }
 
     let(:asserted_from_account_number) { ENV["TNEAKEARYON_TEST_FILTERED_DATA_ACCOUNT_NUMBER_1"] }

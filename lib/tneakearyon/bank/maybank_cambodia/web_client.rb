@@ -13,6 +13,7 @@ class Tneakearyon::Bank::MaybankCambodia::WebClient
   API_THIRD_PARTY_TRANSFER_DETAILS_PATH  = '/RIB/ib104/ib3rdPartyTransferDetails.do'
   API_THIRD_PARTY_TRANSFER_CONFIRM_PATH  = '/RIB/ib104/ib3rdPartyTransferConfirm.do'
   API_THIRD_PARTY_TRANSFER_RESULTS_PATH  = '/RIB/ib104/ib3rdPartyTransferResults.do'
+  API_TAC_REQUEST_PATH                   = '/RIB/ib106/ibTACRequest.do'
 
   PAGE_ELEMENTS = {
     :form_token_input_name              => "org.apache.struts.taglib.html.TOKEN",
@@ -51,16 +52,21 @@ class Tneakearyon::Bank::MaybankCambodia::WebClient
   def execute_third_party_transfer!(options = {})
     default_from_account = ENV["TNEAKEARYON_BANK_MAYBANK_CAMBODIA_DEFAULT_TRANSFER_FROM_ACCOUNT_NUMBER"]
     options[:from_account] ||= default_from_account if default_from_account
-    raise(ArgumentError, "You must pass :from_account, :to_account and :amount") if !options.has_key?(:from_account) || !options.has_key?(:to_account) || !options.has_key?(:amount)
+    raise(ArgumentError, "You must pass :from_account, :to_account, :amount and :tac") if !options.has_key?(:from_account) || !options.has_key?(:to_account) || !options.has_key?(:amount) || !options.has_key?(:tac)
     login! if !logged_in?
     get_third_party_transfer_details!
     transfer_confirmation = post_third_party_transfer_confirm!(options)
     if response_error
       transfer_confirmation
     else
-      transfer_result = post_third_party_transfer_results!(options.merge(:tac_value => "123456"))
+      transfer_result = post_third_party_transfer_results!(options)
       transfer_confirmation.merge(transfer_result)
     end
+  end
+
+  def request_tac!
+    login! if !logged_in?
+    do_request_tac!
   end
 
   private
@@ -91,6 +97,15 @@ class Tneakearyon::Bank::MaybankCambodia::WebClient
     else
       raise(RuntimeError, "Unable to login. Check credentials")
     end
+  end
+
+  def do_request_tac!
+    set_html_response(
+      HTTParty.get(
+        ib_tac_request_endpoint,
+        :headers => build_headers
+      )
+    )
   end
 
   def get_third_party_transfer_details!
@@ -324,6 +339,10 @@ class Tneakearyon::Bank::MaybankCambodia::WebClient
 
   def ib_third_party_transfer_results_endpoint
     api_endpoint(API_THIRD_PARTY_TRANSFER_RESULTS_PATH)
+  end
+
+  def ib_tac_request_endpoint
+    api_endpoint(API_TAC_REQUEST_PATH)
   end
 
   def api_endpoint(path)

@@ -73,7 +73,7 @@ bank_accounts = ib.bank_accounts
 ### Transfers
 
 ```ruby
-transfer = ib.create_third_party_transfer!(:to_account => "0001234556678", :amount => Money.new(1, "USD"))
+transfer = ib.create_third_party_transfer!(:to_account => "0001234556678", :amount => Money.new(1, "USD"), :tac => "123456")
 # => #<Tneakearyon::Transfer:0x00563738af0af8 @error_message="The 3rd party account number is invalid.">
 ```
 
