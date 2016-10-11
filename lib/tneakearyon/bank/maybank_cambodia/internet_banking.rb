@@ -22,7 +22,12 @@ class Tneakearyon::Bank::MaybankCambodia::InternetBanking
       :to_account_number => transfer_response[:to_account_number],
       :to_account_name => transfer_response[:to_account_name],
       :email => transfer_response[:email],
-      :effective_date => transfer_response[:effective_date]
+      :effective_date => transfer_response[:effective_date],
+      :status => transfer_response[:status],
+      :reason => transfer_response[:reason],
+      :reference_number => transfer_response[:reference_number],
+      :transfer_date => transfer_response[:transfer_date],
+      :transfer_time => transfer_response[:transfer_time]
     )
   end
 

@@ -12,6 +12,7 @@ class Tneakearyon::Bank::MaybankCambodia::WebClient
   API_ACCOUNT_INFO_PATH                  = '/RIB/ib102/ibAccountInfo.do'
   API_THIRD_PARTY_TRANSFER_DETAILS_PATH  = '/RIB/ib104/ib3rdPartyTransferDetails.do'
   API_THIRD_PARTY_TRANSFER_CONFIRM_PATH  = '/RIB/ib104/ib3rdPartyTransferConfirm.do'
+  API_THIRD_PARTY_TRANSFER_RESULTS_PATH  = '/RIB/ib104/ib3rdPartyTransferResults.do'
 
   PAGE_ELEMENTS = {
     :form_token_input_name              => "org.apache.struts.taglib.html.TOKEN",
@@ -24,7 +25,8 @@ class Tneakearyon::Bank::MaybankCambodia::WebClient
   WHITELISTED_COOKIE_NAMES = ["M2UMCI"]
 
   attr_accessor :username, :password, :login_details, :bank_accounts,
-                :cookies, :html_response, :form_token, :encryption_key, :secondary_token
+                :cookies, :html_response, :form_token, :encryption_key, :secondary_token,
+                :response_error
 
   def initialize(params = {})
     self.username = params[:username] || ENV["TNEAKEARYON_BANK_MAYBANK_CAMBODIA_WEB_CLIENT_USERNAME"]
@@ -52,7 +54,13 @@ class Tneakearyon::Bank::MaybankCambodia::WebClient
     raise(ArgumentError, "You must pass :from_account, :to_account and :amount") if !options.has_key?(:from_account) || !options.has_key?(:to_account) || !options.has_key?(:amount)
     login! if !logged_in?
     get_third_party_transfer_details!
-    post_third_party_transfer_confirm!(options)
+    transfer_confirmation = post_third_party_transfer_confirm!(options)
+    if response_error
+      transfer_confirmation
+    else
+      transfer_result = post_third_party_transfer_results!(options.merge(:tac_value => "123456"))
+      transfer_confirmation.merge(transfer_result)
+    end
   end
 
   private
@@ -93,7 +101,7 @@ class Tneakearyon::Bank::MaybankCambodia::WebClient
           page_element(:secondary_token_query_string_param) => secondary_token,
           "transferType" => "open"
         },
-        :headers => set_headers
+        :headers => build_headers
       )
     )
     self.secondary_token = set_form_token(html_response)
@@ -103,23 +111,35 @@ class Tneakearyon::Bank::MaybankCambodia::WebClient
     set_html_response(
       HTTParty.post(
         ib_third_party_transfer_confirm_endpoint,
-        :body => set_third_party_transfer_request_body(options),
-        :headers => set_headers
+        :body => build_third_party_transfer_request_body(options),
+        :headers => build_headers
       )
     )
     error_element = html_response.at_xpath("//*[@id='#{page_element(:server_side_error)}']")
     error_message = error_element && error_element.text.strip
 
     if error_message && !error_message.empty?
+      self.response_error = true
       {:error_message => error_message}
     else
+      self.secondary_token = set_form_token(html_response)
       extract_transfer_details(options[:to_account])
     end
   end
 
-  def extract_transfer_details(known_value)
-    to_account_xpath = "//td[contains(., '#{known_value}')]"
-    transfer_info = html_response.at_xpath(to_account_xpath).ancestors("table").search("tr")
+  def post_third_party_transfer_results!(options = {})
+    set_html_response(
+      HTTParty.post(
+        ib_third_party_transfer_results_endpoint,
+        :body => build_third_party_transfer_results_body(options),
+        :headers => build_headers
+      )
+    )
+    extract_transfer_results(options[:to_account])
+  end
+
+  def extract_transfer_details(to_account_number)
+    transfer_info = known_value_td(to_account_number).ancestors("table").children.search("tr")
     {
       :amount => Monetize.parse(table_value(transfer_info[0], 1)),
       :from_account_number => table_value(transfer_info[1], 1),
@@ -130,24 +150,52 @@ class Tneakearyon::Bank::MaybankCambodia::WebClient
     }
   end
 
-  def table_value(row, column)
-    row.search("td")[column].text.strip
+  def extract_transfer_results(to_account_number)
+    transfer_results = known_value_td(to_account_number).ancestors("table").children.search("table").children.search("tr")
+    reason = table_value(transfer_results[1], 1)
+    {
+      :error_message => reason,
+      :status => table_value(transfer_results[0], 1),
+      :reason => reason,
+      :reference_number => table_value(transfer_results[2], 1),
+      :transfer_date => Date.parse(table_value(transfer_results[3], 1)),
+      :transfer_time => Time.parse(table_value(transfer_results[4], 1))
+    }
   end
 
-  def set_third_party_transfer_request_body(options = {})
-    body = {}
+  def known_value_td(known_value)
+    html_response.at_xpath("//td[contains(., '#{known_value}')]")
+  end
+
+  def table_value(row, column)
+    row.children.search("td")[column].text.strip
+  end
+
+  def build_third_party_transfer_results_body(options = {})
+    build_request_body.merge(
+      "tacValue" => options[:tac_value]
+    )
+  end
+
+  def build_third_party_transfer_request_body(options = {})
+    body = build_request_body
     body.merge!(
       "fromAcct" => options[:from_account],
       "toAcct" => options[:to_account],
-      "amount" => options[:amount].to_s,
-      page_element(:secondary_token_query_string_param) => secondary_token,
-      page_element(:form_token_input_name) => secondary_token
+      "amount" => options[:amount].to_s
     )
 
     effective_date = Date.parse(((options[:effective_date] && options[:effective_date]) || Date.today).to_s)
     body.merge!("effectiveDate" => effective_date.strftime("%Y%m%d"))
     body.merge!("email" => options[:email]) if options[:email]
     body
+  end
+
+  def build_request_body
+    {
+      page_element(:secondary_token_query_string_param) => secondary_token,
+      page_element(:form_token_input_name) => secondary_token
+    }
   end
 
   def setup_session!
@@ -162,7 +210,7 @@ class Tneakearyon::Bank::MaybankCambodia::WebClient
     HTTParty.post(
       ib_login_endpoint,
       :body => set_login_request_body,
-      :headers => set_headers
+      :headers => build_headers
     )
   end
 
@@ -173,7 +221,7 @@ class Tneakearyon::Bank::MaybankCambodia::WebClient
         :body => set_login_request_body(
           "password" => des_encrypt(password)
         ),
-        :headers => set_headers
+        :headers => build_headers
       )
     )
   end
@@ -197,7 +245,7 @@ class Tneakearyon::Bank::MaybankCambodia::WebClient
     account_summary_path = html_response.at_xpath("//a[contains(@href, '#{API_ACCOUNT_SUMMARY_PATH}')]")["href"]
 
     set_html_response(
-      HTTParty.get(api_endpoint(account_summary_path), :headers => set_headers)
+      HTTParty.get(api_endpoint(account_summary_path), :headers => build_headers)
     )
 
     account_info_link_xpath = "//a[contains(@href, '#{API_ACCOUNT_INFO_PATH}')]"
@@ -234,7 +282,7 @@ class Tneakearyon::Bank::MaybankCambodia::WebClient
     (des.update(value) + des.final).unpack('H*').first
   end
 
-  def set_headers
+  def build_headers
     headers = {}
     cookie_string = cookies.map {|k ,v| "#{k}=#{v}" }.join("; ")
     headers.merge!("cookie" => cookie_string) if !cookie_string.empty?
@@ -272,6 +320,10 @@ class Tneakearyon::Bank::MaybankCambodia::WebClient
 
   def ib_third_party_transfer_confirm_endpoint
     api_endpoint(API_THIRD_PARTY_TRANSFER_CONFIRM_PATH)
+  end
+
+  def ib_third_party_transfer_results_endpoint
+    api_endpoint(API_THIRD_PARTY_TRANSFER_RESULTS_PATH)
   end
 
   def api_endpoint(path)
