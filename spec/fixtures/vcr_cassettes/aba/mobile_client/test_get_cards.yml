@@ -1,0 +1,86 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://mapp.ababank.com/api/v1/login
+    body:
+      encoding: UTF-8
+      string: "<REQUEST_BODY>"
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache
+      Pragma:
+      - no-cache
+      Content-Type:
+      - application/json; charset=utf-8
+      Expires:
+      - "-1"
+      Server:
+      - Microsoft-IIS/7.5
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Wed, 14 Dec 2016 01:34:53 GMT
+      Content-Length:
+      - '115'
+    body:
+      encoding: UTF-8
+      string: '{"status":{"code":1,"description":"null [null]"},"token":"F8tHKtBB6t3TPfc1DBQDL2ucb3qyKfu5","session_id":"3122648"}'
+    http_version:
+  recorded_at: Wed, 14 Dec 2016 01:34:52 GMT
+- request:
+    method: post
+    uri: https://mapp.ababank.com/api/v1/cards
+    body:
+      encoding: UTF-8
+      string: "<REQUEST_BODY>"
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache
+      Pragma:
+      - no-cache
+      Content-Type:
+      - application/json; charset=utf-8
+      Expires:
+      - "-1"
+      Server:
+      - Microsoft-IIS/7.5
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Wed, 14 Dec 2016 01:34:56 GMT
+      Content-Length:
+      - '391'
+    body:
+      encoding: UTF-8
+      string: '{"status":{"code":1,"description":"null [null]"},"cards":[{"number":"623375****4281","acc":"000123456","accname":"SAVINGS
+        ACCOUNT","cardname":"UnionPay Debit cards","balance":1000.00,"ccy":"USD","candb":"Y","cancr":"Y"}],"ecash_ccy":"USD","ecash_fee":0.5,"lastcr":{"acc":"000123456","date":"1481654111"},"lastdb":{"acc":"000123456","date":"1481654102"},"otp_limit":20000.01,"pin_limit":0.01}'
+    http_version:
+  recorded_at: Wed, 14 Dec 2016 01:34:54 GMT
+recorded_with: VCR 3.0.3

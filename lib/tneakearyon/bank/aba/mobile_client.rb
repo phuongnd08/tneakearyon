@@ -10,7 +10,7 @@ class Tneakearyon::Bank::ABA::MobileClient
     self.security_code = options[:security_code] || get_config(:security_code)
   end
 
-  def test_login!
+  def login!
     parse_response!(
       HTTParty.post(
         api_endpoint(:login),
@@ -24,12 +24,20 @@ class Tneakearyon::Bank::ABA::MobileClient
     set_token
   end
 
-  def test_get_cards!
+  def get_cards!
+    if token.nil?
+      login!
+    end
+
+    timestamp = get_timestamp
+    request_body = build_default_request_body.merge("session_id" => session_id)
+    add_timestamp!(request_body, timestamp)
+
     parse_response!(
       HTTParty.post(
         api_endpoint(:cards),
-        :body => build_default_request_body.merge(
-          "session_id" => session_id
+        :body => request_body.merge(
+          "hash" => encode_message(aba_id + timestamp.to_s + token)
         )
       ).body
     )
