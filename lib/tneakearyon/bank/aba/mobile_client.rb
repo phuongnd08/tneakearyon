@@ -30,7 +30,7 @@ class Tneakearyon::Bank::ABA::MobileClient
     end
 
     timestamp = get_timestamp
-    request_body = build_default_request_body.merge("session_id" => session_id)
+    request_body = build_default_request_body
     add_timestamp!(request_body, timestamp)
 
     parse_response!(
