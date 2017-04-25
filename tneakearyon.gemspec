@@ -30,4 +30,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "vcr"
   spec.add_development_dependency "webmock"
   spec.add_development_dependency "dotenv"
+  spec.add_development_dependency "thor"
+  spec.add_development_dependency "httplog"
+  spec.add_development_dependency "byebug"
 end
