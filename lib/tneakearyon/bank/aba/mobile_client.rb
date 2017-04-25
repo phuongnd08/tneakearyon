@@ -17,7 +17,11 @@ class Tneakearyon::Bank::ABA::MobileClient
         :body => build_default_request_body.merge(
           "nick" => username,
           "inner_hash" => encode_message(aba_id + security_code)
-        )
+        ),
+        :headers => {
+          "User-Agent" => "android_aba_ibank_client",
+          "client_version" => "105"
+        }
       ).body
     )
     set_session_id
