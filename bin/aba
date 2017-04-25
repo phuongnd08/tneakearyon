@@ -1,0 +1,45 @@
+#!/usr/bin/env ruby
+
+require 'thor'
+require 'dotenv'
+require 'tneakearyon'
+require 'httplog'
+
+Dotenv.load
+
+class AbaCLI < Thor
+  desc "fetch-balance", "Get balance"
+  def fetch_balance
+    cards = aba.get_cards!["cards"]
+    new_balance = cards.first["balance"]
+
+    puts "Balance = #{new_balance}"
+  end
+
+  desc "fetch-account-name ACCOUNT", "Get name of ACCOUNT"
+  def fetch_account_name(account)
+    puts "Account name of #{account}: #{aba.get_account_name(account)}"
+  end
+
+  desc "fetch-card-name CARD", "Get name of CARD"
+  def fetch_card_name(card)
+    puts "Card name of #{card}: #{aba.get_account_name_from_card_number(card)}"
+  end
+
+  desc "pay ACCOUNT AMOUNT MEMO", "Pay to ACCOUNT"
+  def pay(account, amount, memo)
+    aba.pay(account, amount, memo)
+  end
+
+  private
+  def aba
+    Tneakearyon::Bank::ABA::MobileClient.new(
+      username: ENV["TNEAKEARYON_BANK_ABA_MOBILE_CLIENT_USERNAME"],
+      aba_id: ENV["TNEAKEARYON_BANK_ABA_MOBILE_CLIENT_ABA_ID"],
+      security_code: ENV["TNEAKEARYON_BANK_ABA_MOBILE_CLIENT_SECURITY_CODE"],
+      token: ENV["TNEAKEARYON_BANK_ABA_MOBILE_CLIENT_TOKEN"]
+    )
+  end
+end
+
+AbaCLI.start
