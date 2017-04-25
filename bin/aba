@@ -3,6 +3,7 @@
 require 'thor'
 require 'dotenv'
 require 'tneakearyon'
+require 'byebug'
 require 'httplog'
 
 Dotenv.load
@@ -19,11 +20,6 @@ class AbaCLI < Thor
   desc "fetch-account-name ACCOUNT", "Get name of ACCOUNT"
   def fetch_account_name(account)
     puts "Account name of #{account}: #{aba.get_account_name(account)}"
-  end
-
-  desc "fetch-card-name CARD", "Get name of CARD"
-  def fetch_card_name(card)
-    puts "Card name of #{card}: #{aba.get_account_name_from_card_number(card)}"
   end
 
   desc "pay ACCOUNT AMOUNT MEMO", "Pay to ACCOUNT"
